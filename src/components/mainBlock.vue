@@ -40,6 +40,7 @@
 </template>
 
 <script>
+    import objectFitImages from 'object-fit-images';
     import {
         mapActions,
         mapGetters
@@ -55,6 +56,9 @@
             }), {
 
         }),
+        created(){
+            objectFitImages();
+        }
     }
 </script>
 
@@ -78,6 +82,7 @@
 		   -o-object-fit: cover;
 		   object-fit: cover;
 		   object-position: bottom;
+           font-family: "object-fit: cover; object-position: bottom;";
 	   }
 
        figcaption{
