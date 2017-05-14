@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-5">
+			<div class="col-md-4">
 				<div class="info-box">
 					<header>
 						<i class="ion-information-circled"></i><span>基本資料</span>
@@ -31,21 +31,17 @@
 					</div>
 				</div>
 
-				<div class="info-box hidden-sm hidden-xs">
-					<header>
+				<div class="info-box">
+					<header @click="ToggleIgPic" class="dropdown" :class="{ active: isIgPicOpen}">
 						<i class="ion-social-instagram"></i><span>Instagram</span>
 					</header>
 					<div class="info-box--body">
-						<ul class="ig-pic clearfix">
-							<li v-for="item in igPics">
-								<img :src="item.images.thumbnail.url" :alt="item.caption.text" />
-							</li>
-						</ul>
+						<ig-pic :is-open="isIgPicOpen" ></ig-pic>
 					</div>
 				</div>
 			</div>
 
-			<div class="col-md-7">
+			<div class="col-md-8 timeline">
 				<div class="time-box" v-for="item in resumeData.timeline">
 					<div class="time-box--head clearfix">
 						<img :src="fbInfo.picture.data.url" :alt="fbInfo.name">
@@ -72,22 +68,21 @@
 
 <script>
 	import marked from 'marked'
-	import common from '../../assets/JS/common'
-	import jsonp from 'jsonp'
+	import igPic from '../igPic'
 	import {
 		mapActions,
 		mapGetters
-	} from 'vuex';
+	} from 'vuex'
+
 	export default {
 		name: 'home',
+		components:{
+			igPic
+		},
 		data() {
 			return {
 				current_url: location.origin,
-				igClientId: "f1c8b84c85ea439db955254bbf990929",
-				igApiUrl: common.addQueryString("https://api.instagram.com/v1/users/" + 1268817115 + "/media/recent/", {
-					access_token: "1268817115.f1c8b84.bfa68ce027dd4c38bbdbd63c623b2782"
-				}),
-				igPics: []
+				isIgPicOpen: false,
 			}
 		},
 		computed: Object.assign( mapGetters({
@@ -100,18 +95,12 @@
 			Marked(val){
 				return marked(val, {  });
 			},
-			GetIgPic(){
-				jsonp(this.igApiUrl, null, (err, res) =>{
-					if(err){
-						console.error(err.message);
-					}else{
-						this.igPics = res.data.slice(0,9);
-					}
-				})
+			ToggleIgPic(){
+				this.isIgPicOpen = !this.isIgPicOpen;
 			}
 		}),
 		created(){
-			this.GetIgPic();
+			
 		}
 	}
 </script>
@@ -144,6 +133,26 @@
 					left: 50%;
 					transform: translate(-50%, -50%);
 					color: white;
+				}
+			}
+
+			&.dropdown{
+				cursor: pointer;
+				&::before{
+					font-size: 20px;
+					content: "\f3d0";
+					font-family: "Ionicons";
+					position: absolute;
+					top: 50%;
+					right: 10px;
+					transform: translateY(-50%) rotate(0);
+					transition: all .3s ease-in;
+				}
+
+				&.active{
+					&::before{
+						transform: translateY(-50%) rotate(-180deg);
+					}
 				}
 			}
 
@@ -241,6 +250,7 @@
 			background-color: #f6f7f9;
 			padding: 10px 15px;
 			position: relative;
+			border-radius: 0 0 5px 5px;
 
 			.like{
 				display: inline-block;
@@ -263,29 +273,9 @@
 		}
 	}
 
-	.ig-pic{
-		padding: 10px 0 0;
-		margin: 0;
-		list-style: none;
-
-		> li{
-			float: left;
-			width: 33.33%;
-			padding: 0 10px 10px 0;
-
-			&:nth-child(3n-1){
-				padding-left: 5px;
-				padding-right: 5px;
-			}
-			&:nth-child(3n){
-				padding-left: 10px;
-				padding-right: 0;
-			}
-
-			img{
-				position: relative;
-				width: 100%;
-			}
+	@media(min-width: 991px){
+		.timeline{
+			padding-left:0;
 		}
 	}
 </style>

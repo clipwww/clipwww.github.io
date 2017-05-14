@@ -44,7 +44,7 @@ export default {
             this.isInit = true;
             clearInterval(this.initGSearch);
 
-            if(this.$route.query){
+            if(this.$route.query.q != undefined){
                 document.querySelector("[name='search']").value = this.$route.query.q;
                 setTimeout(function() {
                     document.querySelector("[type='image'].gsc-search-button").click();
