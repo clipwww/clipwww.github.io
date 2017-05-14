@@ -98,6 +98,14 @@
     margin: 0;
   }
 
+  .paper{
+    background-color: white;
+		border-radius: 5px;
+		padding: 15px;
+		border: 1px solid #ddd;
+		margin-bottom: 15px;
+  }
+
   .fade-enter-active, .fade-leave-active {
     transition: all .5s
   }

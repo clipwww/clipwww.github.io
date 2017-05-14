@@ -54,12 +54,15 @@
 					</div>
 					<div class="time-box--body">
 						<div class="markdown-wrap" v-html="Marked(item.content)"></div>
+						<div class="time-box--share">
+							<a :href="[`http://www.facebook.com/sharer.php?u=${current_url}`]" title="share to Facebook"
+							:onclick="[`ga('send', 'social', 'Facebook', 'Share', '${current_url}' );`]">
+								<i class="ion-android-share"></i>分享
+							</a>
+						</div>
 					</div>
 					<div class="time-box--footer">
-						<a :href="[`http://www.facebook.com/sharer.php?u=${current_url}`]" title="share to Facebook"
-						   :onclick="[`ga('send', 'social', 'Facebook', 'Share', '${current_url}' );`]">
-							<i class="ion-android-share"></i>分享
-						</a>
+						<i class="like"></i><a href="javascript:void(0);">我、邊緣人和其他 85 人</a>
 					</div>
 				</div>
 			</div>
@@ -79,7 +82,7 @@
 		name: 'home',
 		data() {
 			return {
-				current_url: location.href,
+				current_url: location.origin,
 				igClientId: "f1c8b84c85ea439db955254bbf990929",
 				igApiUrl: common.addQueryString("https://api.instagram.com/v1/users/" + 1268817115 + "/media/recent/", {
 					access_token: "1268817115.f1c8b84.bfa68ce027dd4c38bbdbd63c623b2782"
@@ -190,12 +193,12 @@
 	.time-box{
 		background-color: white;
 		border-radius: 5px;
-		padding: 15px;
 		border: 1px solid #ddd;
 		margin-bottom: 15px;
 
 		&--head{
-			margin-bottom: 15px;
+			padding: 15px;
+
 			img{
 				width: 50px;
 				height: 50px;
@@ -218,11 +221,11 @@
 		}
 
 		&--body{
-
+			padding: 0 15px;
 		}
 
-		&--footer{
-			padding: 5px 0 0;
+		&--share{
+			padding: 5px 0;
 			border-top: 1px solid #ddd;
 			a{
 				color: #666;
@@ -230,6 +233,32 @@
 			i{
 				margin-right: 5px;
 				font-size: 18px;
+			}
+		}
+
+		&--footer{
+			border-top: 1px solid #ddd;
+			background-color: #f6f7f9;
+			padding: 10px 15px;
+			position: relative;
+
+			.like{
+				display: inline-block;
+				background-image: url('../../assets/images/j5wDbutfAGa.png');
+				background-repeat: no-repeat;
+				background-size: 170px 126px;
+				background-position: -36px -76px;
+				height: 16px;
+				width: 16px;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+
+			a{
+				padding-left: 21px;
+				vertical-align: middle;
+				color: #365899;
 			}
 		}
 	}

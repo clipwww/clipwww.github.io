@@ -8,10 +8,10 @@
             </div>
             <div class="topbar--search">
                 <div class="topbar--search--wrap">
-                    <input type="text" placeholder="我也不知道這是要搜尋什麼"/>
-                    <button><i class="ion-android-search"></i></button>
+                    <input type="text" v-model="searchWord" placeholder="總之是Google站內搜尋"/>
+                    <button @click="GoSearch"><i class="ion-android-search"></i></button>
                 </div>
-                <router-link to="/">
+                <router-link to="/Search">
                     <i class="ion-android-search"></i>
                 </router-link>
             </div>
@@ -58,7 +58,7 @@
     export default {
         data(){
              return{
-               
+               searchWord: ""
             }
         },
         computed: Object.assign(mapGetters({
@@ -66,6 +66,11 @@
             }), {
 
         }),
+        methods:{
+            GoSearch(){
+                this.$router.push(`/Search?q=${this.searchWord}`);
+            }
+        }
     
     }
 </script>
