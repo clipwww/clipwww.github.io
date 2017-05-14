@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import common from '../assets/JS/common'
+import resumeData from '../assets/js/resumeData'
 
 const state = {
+    resumeData: resumeData,
     get_access_token_url: common.addQueryString("https://graph.facebook.com/oauth/access_token", {
         "client_id": 1790670677923951,
         "client_secret": "b4ca829881e29e54da8024928dcf6b53",
@@ -12,7 +14,7 @@ const state = {
     fb_api_url: "https://graph.facebook.com/",
     myFbInfo: {
         id: 0,
-        name: "Loading...",
+        name: "",
         picture: {
             data: {
                 url: ""
@@ -22,6 +24,7 @@ const state = {
 }
 
 const getters = {
+    GetResumeData: state => state.resumeData,
     GetFbAccessTokenUrl: state => state.get_access_token_url,
     GetAccessToken: state => state.access_token,
     GetFbApiUrl: state => state.fb_api_url,

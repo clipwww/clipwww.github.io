@@ -7,14 +7,13 @@
 						<i class="ion-information-circled"></i><span>基本資料</span>
 					</header>
 					<div class="info-box--body">
-						<ul>
+						<ul class="info-list">
 							<li><i class="ion-social-octocat"></i><a href="https://github.com/clipwww" title="clipwww github" target="_blank">github.com/clipwww</a></li>
-							<li><i class="ion-ios-calendar"></i>1990 / 03 / 30</li>
+							<li><i class="ion-ios-calendar"></i>1990 / 03 / 30（♂）</li>
 							<li><i class="ion-ios-telephone"></i>0925151578（19:00 - 22:00）</li>
 							<li><i class="ion-ios-email"></i><a href="mailto:clipwww@gmail.com">clipwww@gmail.com</a></li>
 							<li><i class="ion-briefcase"></i>蝦米智慧媒體Web前端工程師</li>
 							<li><i class="ion-university"></i>東海大學資管系碩士</li>
-							<li><i class="ion-university"></i>東海大學資工系學士</li>
 						</ul>
 					</div>
 				</div>
@@ -23,6 +22,45 @@
 					<header>
 						<i class="ion-settings"></i><span>技能</span>
 					</header>
+					<div class="info-box--body">
+						<ul class="skill-tags clearfix">
+							<li v-for="item in resumeData.skills" :style="{ fontSize: `${item.value}px`, backgroundColor: item.color }">
+								{{ item.name }}
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="info-box hidden-sm hidden-xs">
+					<header>
+						<i class="ion-social-instagram"></i><span>Instagram</span>
+					</header>
+					<div class="info-box--body">
+						<ul class="ig-pic clearfix">
+							<li v-for="item in igPics">
+								<img :src="item.images.thumbnail.url" :alt="item.caption.text" />
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-7">
+				<div class="time-box" v-for="item in resumeData.timeline">
+					<div class="time-box--head clearfix">
+						<img :src="fbInfo.picture.data.url" :alt="fbInfo.name">
+						<span class="name">{{ fbInfo.name }}</span>
+						<span class="time">{{ item.date.getFullYear() }} 年 {{ item.date.getMonth() + 1 }} 月<i class="ion-ios-time-outline"></i><i class="ion-earth"></i></span>
+					</div>
+					<div class="time-box--body">
+						<div class="markdown-wrap" v-html="Marked(item.content)"></div>
+					</div>
+					<div class="time-box--footer">
+						<a :href="[`http://www.facebook.com/sharer.php?u=${current_url}`]" title="share to Facebook"
+						   :onclick="[`ga('send', 'social', 'Facebook', 'Share', '${current_url}' );`]">
+							<i class="ion-android-share"></i>分享
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -30,14 +68,49 @@
 </template>
 
 <script>
-  export default {
-    name: 'hello',
-    data() {
-      return {
-        msg: 'Welcome to Your Vue.js App'
-      }
-    }
-  }
+	import marked from 'marked'
+	import common from '../../assets/JS/common'
+	import jsonp from 'jsonp'
+	import {
+		mapActions,
+		mapGetters
+	} from 'vuex';
+	export default {
+		name: 'home',
+		data() {
+			return {
+				current_url: location.href,
+				igClientId: "f1c8b84c85ea439db955254bbf990929",
+				igApiUrl: common.addQueryString("https://api.instagram.com/v1/users/" + 1268817115 + "/media/recent/", {
+					access_token: "1268817115.f1c8b84.bfa68ce027dd4c38bbdbd63c623b2782"
+				}),
+				igPics: []
+			}
+		},
+		computed: Object.assign( mapGetters({
+			resumeData: "GetResumeData",
+			fbInfo: "GetMyFbInfo"
+		}),{
+
+		}),
+		methods: Object.assign(mapActions([""]),{
+			Marked(val){
+				return marked(val, {  });
+			},
+			GetIgPic(){
+				jsonp(this.igApiUrl, null, (err, res) =>{
+					if(err){
+						console.error(err.message);
+					}else{
+						this.igPics = res.data.slice(0,9);
+					}
+				})
+			}
+		}),
+		created(){
+			this.GetIgPic();
+		}
+	}
 </script>
 
 
@@ -66,7 +139,7 @@
 					position: absolute;
 					top: 50%;
 					left: 50%;
-					transform: translate(-50%, -52%);
+					transform: translate(-50%, -50%);
 					color: white;
 				}
 			}
@@ -80,7 +153,7 @@
 		}
 
 		&--body{
-			> ul{
+			> ul.info-list{
 				padding: 0;
 				margin: 0;
 				list-style: none;
@@ -90,10 +163,99 @@
 						display: inline-block;
 						font-size: 25px;
 						color: #808080;
+						width: 24px;
+						text-align: center;
 						margin-right: 10px;
 						transform: translateY(4px);
 					}
 				}
+			}
+
+			> ul.skill-tags{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+				> li{
+					display: inline-block;
+					padding: 2px 15px;
+					background-color: #808080;
+					margin: 10px 10px 0 0;
+					border-radius: 50px;
+					color: white;
+				}
+			}
+		}
+	}
+
+	.time-box{
+		background-color: white;
+		border-radius: 5px;
+		padding: 15px;
+		border: 1px solid #ddd;
+		margin-bottom: 15px;
+
+		&--head{
+			margin-bottom: 15px;
+			img{
+				width: 50px;
+				height: 50px;
+				float: left;
+				margin-right: 10px;
+			}
+			.name{
+				margin-top: 5px;
+				color: #29487d;
+				font-size: 20px;
+			}
+			.time{
+				display: block;
+				color: #808080;
+				font-size: 12px;
+				i{
+					margin-left: 10px;
+				}
+			}
+		}
+
+		&--body{
+
+		}
+
+		&--footer{
+			padding: 5px 0 0;
+			border-top: 1px solid #ddd;
+			a{
+				color: #666;
+			}
+			i{
+				margin-right: 5px;
+				font-size: 18px;
+			}
+		}
+	}
+
+	.ig-pic{
+		padding: 10px 0 0;
+		margin: 0;
+		list-style: none;
+
+		> li{
+			float: left;
+			width: 33.33%;
+			padding: 0 10px 10px 0;
+
+			&:nth-child(3n-1){
+				padding-left: 5px;
+				padding-right: 5px;
+			}
+			&:nth-child(3n){
+				padding-left: 10px;
+				padding-right: 0;
+			}
+
+			img{
+				position: relative;
+				width: 100%;
 			}
 		}
 	}

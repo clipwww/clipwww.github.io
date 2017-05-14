@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "axios": "^0.16.1",
+    "jsonp": "^0.2.1",
+    "marked": "^0.3.6",
     "normalize.css": "^7.0.0",
     "object-fit-images": "^3.2.3",
     "vue": "^2.2.6",

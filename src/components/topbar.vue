@@ -26,11 +26,13 @@
                     <input class="topbar--right--my--messages" type="checkbox" id="js-messages">
                     <div class="checkbox-popup-wrap">
                         <label for="js-messages"> </label>
-                        <div class="content container">
-                            <p>嗨，我是簡爾廷。</p>
-                            <p>我也不知道要讓這邊點了可以幹嘛所以就弄了這個。</p>
-                            <p>這邊是用chexbox + label做出來的（無js）</p>
-                        </div>
+                        <div class="container">
+                            <div class="content">
+                                <p>嗨，我是簡爾廷。</p>
+                                <p>我也不知道要讓這邊點了可以幹嘛所以就弄了這個。</p>
+                                <p>這邊是用chexbox + label做出來的（無js）</p>
+                            </div>
+                        </div> 
                     </div>
                 </div>
                 <div class="topbar--right--link">
@@ -119,7 +121,7 @@
             &--wrap{
                 position: absolute;
                 top: 50%;
-                left: 0;
+                left: 5px;
                 transform: translateY(-50%);
                 height: 25px;
                 width: 100%;
@@ -220,7 +222,6 @@
                         left: 0;
                         bottom: 0;
                         right: 0;
-                        padding: 0 15px;
 
                         label{
                             position: fixed;
@@ -239,13 +240,15 @@
                             margin-top: 5px;
                             padding: 15px;
                             border-radius: 5px;
+                            max-width: 320px;
+                            float: right;
                             z-index: 1031;
 
                             &::before{
                                 content: "";
                                 position: absolute;
-                                top: -20px;
-                                right: 140px;
+                                top: -18px;
+                                right: 120px;
                                 border: 10px solid transparent;
                                 border-color: transparent  transparent white transparent;
                             }
@@ -295,7 +298,7 @@
 
     @media(max-width: 992px){
         .topbar{
-            .container{
+            > .container{
                 padding: 0;
             }
             &--search--wrap, &--right--my figure figcaption, &--right--link{

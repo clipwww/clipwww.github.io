@@ -10,20 +10,20 @@
                 <img :src="fbInfo.picture.data.url" :alt="fbInfo.name">
             </div>
             <ul class="menu--link">
-                <li>
-                    <router-link to="/">
+                <li :class="{ active: IsNowRoute('Home')}">
+                    <router-link to="/" >
                         <i class="ion-ios-home"></i>
                         <span>首頁</span>
                     </router-link>
                 </li>
-                <li>
-                    <router-link to="/about">
+                <li :class="{ active: IsNowRoute('About')}">
+                    <router-link to="/About">
                         <i class="ion-person"></i>
                         <span>關於</span>
                     </router-link>
                 </li>
-                <li>
-                    <router-link to="/work">
+                <li :class="{ active: IsNowRoute('Work')}">
+                    <router-link to="/Work">
                         <i class="ion-folder"></i>
                         <span>作品</span>
                     </router-link>
@@ -31,7 +31,7 @@
                 <li>
                     <router-link to="/">
                         <i class="ion-more"></i>
-                        <span>更多</span>
+                        <span>更多<i class="ion-arrow-down-b"></i></span>
                     </router-link>
                 </li>
             </ul>
@@ -56,6 +56,11 @@
             }), {
 
         }),
+        methods:{
+			IsNowRoute(val){
+				return this.$route.name === val;
+			}
+        },
         created(){
             objectFitImages();
         }
@@ -170,6 +175,21 @@
                     border-right: 1px solid #ddd;
                 }
 
+                &.active{
+                    &::before{
+                        content:"";
+                        position: absolute;
+                        left: 50%;
+                        bottom: -8px;
+                        border: solid #ddd;
+                        border-width:  1px 0 0 1px;
+                        width: 15px;
+                        height: 15px;
+                        background-image: url('../assets/images/subtle_grunge.png');
+                        transform: translateX(-50%) rotateZ(45deg);
+                    }
+                }
+
                 > a{
                     display: block;
                     height: 100%;
@@ -177,7 +197,7 @@
                     &:hover{
                         background-color: rgba(0,0,0,.1);
                     }
-                    i{
+                    > i{
                         display: none;
                     }
                     span{
@@ -185,7 +205,11 @@
                         top: 50%;
                         left: 50%;
                         transform: translate(-50%, -50%);
-                        font-size: 18px;
+                        font-size: 16px;
+                        white-space: nowrap;
+                        i{
+                            margin-left: 5px;
+                        }
                     }
                 }
             }
@@ -238,13 +262,16 @@
 
                     a{
                         text-align: center;
-                        i{
+                        > i{
                             display: block;
                             font-size: 24px;
                         }
                         span{
                             top: 70%;
                             font-size: 14px;
+                            i{
+                                display: none;
+                            }
                         }
                     }
                 }
