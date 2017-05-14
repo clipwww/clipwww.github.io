@@ -5,7 +5,7 @@ const skills = [
     { name: "Vue.js", value: 20, color: "#42b883" },
     { name: "SCSS", value: 16 },
     { name: "Git", value: 12 },
-    { name: ".NET MVC", value: 18 },
+    { name: ".NET MVC", value: 17 },
     { name: "C# Razor", value: 20 },
     { name: "Node.js", value: 10 },
     { name: "Webpack", value: 10 },

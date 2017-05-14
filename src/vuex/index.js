@@ -1,13 +1,14 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import common from '../assets/JS/common'
+import secretData from '../assets/js/secretData'
 import resumeData from '../assets/js/resumeData'
 
 const state = {
     resumeData: resumeData,
     get_access_token_url: common.addQueryString("https://graph.facebook.com/oauth/access_token", {
-        "client_id": 1790670677923951,
-        "client_secret": "b4ca829881e29e54da8024928dcf6b53",
+        "client_id": secretData.fbParam.client_id,
+        "client_secret": secretData.fbParam.client_secret,
         "grant_type": "client_credentials"
     }),
     access_token: "",
@@ -17,7 +18,7 @@ const state = {
         name: "",
         picture: {
             data: {
-                url: ""
+                url: "" //http://clipwww.github.io/MetroResume/image/983902.jpg
             }
         }
     },

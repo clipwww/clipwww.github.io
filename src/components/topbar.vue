@@ -8,7 +8,7 @@
             </div>
             <div class="topbar--search">
                 <div class="topbar--search--wrap">
-                    <input type="text" v-model="searchWord" placeholder="總之是Google站內搜尋"/>
+                    <input type="text" v-model="searchWord" @keyup.enter="GoSearch" placeholder="總之是Google站內搜尋"/>
                     <button @click="GoSearch"><i class="ion-android-search"></i></button>
                 </div>
                 <router-link to="/Search">
@@ -28,9 +28,16 @@
                         <label for="js-messages"> </label>
                         <div class="container">
                             <div class="content">
-                                <p>嗨，我是簡爾廷。</p>
-                                <p>我也不知道要讓這邊點了可以幹嘛所以就弄了這個。</p>
-                                <p>這邊是用chexbox + label做出來的（無js）</p>
+                                <div class="text">
+                                    <p>這個網頁是使用 vue-cli 建立</p>
+                                    <p>template為預設 webpacke 2.0</p>
+                                    <p>加上 vue-router 與 vuex</p>
+                                    <p>樣式以 Bootstrap 為基礎後仿(抄)Facebook風格</p>
+                                    <p>Icon使用 Ionic Framework</p>
+                                    <p>頭貼跟名字為使用 Axios 串FB Api抓自己FB的資料</p>
+                                    <p>IG照片為使用 jsonp 串IG Api抓自己的IG照片</p>
+                                    <p>Source Code: <a href="https://github.com/clipwww/clipwww.github.io/tree/source" target="_blank">Here</a></p>
+                                </div>
                             </div>
                         </div> 
                     </div>
@@ -241,13 +248,18 @@
                         .content{
                             position: relative;
                             color: black;
-                            background-color: white;
                             margin-top: 5px;
-                            padding: 15px;
-                            border-radius: 5px;
-                            max-width: 320px;
-                            float: right;
+                            padding: 0 5px;
                             z-index: 1031;
+
+                            .text{
+                                background-color: white;
+                                padding: 15px;
+                                border-radius: 5px;
+                                max-width: 500px;
+                                float: right;
+                                font-size: 13px;
+                            }
 
                             &::before{
                                 content: "";

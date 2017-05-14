@@ -9,12 +9,12 @@
 <script>
     import jsonp from 'jsonp'
     import common from '../assets/JS/common'
+    import secretData  from '../assets/js/secretData'
     export default {
         data(){
             return{
-                igClientId: "f1c8b84c85ea439db955254bbf990929",
-                igApiUrl: common.addQueryString("https://api.instagram.com/v1/users/" + 1268817115 + "/media/recent/", {
-                    access_token: "1268817115.f1c8b84.bfa68ce027dd4c38bbdbd63c623b2782"
+                igApiUrl: common.addQueryString("https://api.instagram.com/v1/users/" + secretData.igParam.userId + "/media/recent/", {
+                    access_token: secretData.igParam.access_token
                 }),
                 igPics: []
             }

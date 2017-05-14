@@ -1,10 +1,13 @@
 <template>
   <div id="app">
     <topbar/>
-    <main-block/>
-    <transition name="fade" mode="out-in">
-       <router-view></router-view>
-    </transition>
+    <div class="main-wrap">
+      <main-block/>
+      <transition name="fade" mode="out-in">
+        <router-view></router-view>
+      </transition>
+    </div>
+    <footerbar />
   </div>
 </template>
 
@@ -15,6 +18,8 @@
   } from 'vuex';
   import topbar from './components/topbar';
   import mainBlock from './components/mainBlock';
+  import footerbar from './components/footer';
+
   import common from './assets/JS/common'
   import Vue from 'vue'
   import axios from 'axios'
@@ -26,7 +31,8 @@
     name: 'app',
     components: {
       topbar,
-      mainBlock
+      mainBlock,
+      footerbar
     },
     data() {
       return {
@@ -96,6 +102,10 @@
   
   figure {
     margin: 0;
+  }
+
+  .main-wrap{
+      min-height: 100vh;
   }
 
   .paper{

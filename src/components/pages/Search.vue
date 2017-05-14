@@ -1,6 +1,7 @@
 <template>
     <div class="container">
         <div class="paper">
+            <p>然而應該搜尋不到東西...</p>
             <div class="gsearch-wrap">
                 <div class="box" v-html="gsearchBox"></div>
                 <div class="result" v-html="gsearchResults"></div>

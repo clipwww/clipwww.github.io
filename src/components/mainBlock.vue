@@ -84,7 +84,6 @@
 		   left: 0;
 		   width: 100%;
 		   height: 100%;
-		   -o-object-fit: cover;
 		   object-fit: cover;
 		   object-position: bottom;
            font-family: "object-fit: cover; object-position: bottom;";
@@ -137,7 +136,7 @@
             position: absolute;
             left: 15px;
             bottom: 15px;
-            width: 150px;
+            width: 148px;
             height: 0;
             padding-bottom: 150px;
             border-radius: 5px;
@@ -151,8 +150,9 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-                -o-object-fit: cover;
                 object-fit: cover;
+                object-position: top;
+                font-family: "object-fit: cover; object-position: top;";
                 padding: 5px;
             }
         }
@@ -240,7 +240,7 @@
 
            &--myPic{
                width: 100px;
-               padding-bottom: 100px;
+               padding-bottom: 98px;
                left: 50%;
                bottom: 150px;
                transform: translateX(-50%);
