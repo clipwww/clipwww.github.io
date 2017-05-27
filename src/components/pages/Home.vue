@@ -6,7 +6,7 @@
 					<header>
 						<i class="ion-information-circled"></i><span>基本資料</span>
 					</header>
-					<div class="info-box--body">
+					<div class="body">
 						<ul class="info-list">
 							<li><i class="ion-social-octocat"></i><a href="https://github.com/clipwww" title="clipwww github" target="_blank">github.com/clipwww</a></li>
 							<li><i class="ion-ios-calendar"></i>1990 / 03 / 30（♂）</li>
@@ -22,7 +22,7 @@
 					<header>
 						<i class="ion-settings"></i><span>技能</span>
 					</header>
-					<div class="info-box--body">
+					<div class="body">
 						<ul class="skill-tags clearfix">
 							<li v-for="item in resumeData.skills" :style="{ fontSize: `${item.value}px`, backgroundColor: item.color }">
 								{{ item.name }}
@@ -35,7 +35,7 @@
 					<header @click="ToggleIgPic" class="dropdown" :class="{ active: isIgPicOpen}">
 						<i class="ion-social-instagram"></i><span>Instagram</span>
 					</header>
-					<div class="info-box--body">
+					<div class="body">
 						<ig-pic :is-open="isIgPicOpen" ></ig-pic>
 					</div>
 				</div>
@@ -43,21 +43,21 @@
 
 			<div class="col-md-8 timeline">
 				<div class="time-box" v-for="item in resumeData.timeline">
-					<div class="time-box--head clearfix">
+					<div class="head clearfix">
 						<img :src="fbInfo.picture.data.url" :alt="fbInfo.name">
 						<span class="name">{{ fbInfo.name }}</span>
 						<span class="time">{{ item.date.getFullYear() }} 年 {{ item.date.getMonth() + 1 }} 月<i class="ion-ios-time-outline"></i><i class="ion-earth"></i></span>
 					</div>
-					<div class="time-box--body">
+					<div class="body">
 						<div class="markdown-wrap" v-html="Marked(item.content)"></div>
-						<div class="time-box--share">
+						<div class="share">
 							<a :href="[`http://www.facebook.com/sharer.php?u=${current_url}`]" title="share to Facebook"
 							:onclick="[`ga('send', 'social', 'Facebook', 'Share', '${current_url}' );`]">
 								<i class="ion-android-share"></i>分享
 							</a>
 						</div>
 					</div>
-					<div class="time-box--footer">
+					<div class="footer">
 						<i class="like"></i><a href="javascript:void(0);">我、邊緣人和其他 85 人</a>
 					</div>
 				</div>
@@ -164,7 +164,7 @@
 			}
 		}
 
-		&--body{
+		.body{
 			> ul.info-list{
 				padding: 0;
 				margin: 0;
@@ -205,7 +205,7 @@
 		border: 1px solid #ddd;
 		margin-bottom: 15px;
 
-		&--head{
+		.head{
 			padding: 15px;
 
 			img{
@@ -229,11 +229,11 @@
 			}
 		}
 
-		&--body{
+		.body{
 			padding: 0 15px;
 		}
 
-		&--share{
+		.share{
 			padding: 5px 0;
 			border-top: 1px solid #ddd;
 			a{
@@ -245,7 +245,7 @@
 			}
 		}
 
-		&--footer{
+		.footer{
 			border-top: 1px solid #ddd;
 			background-color: #f6f7f9;
 			padding: 10px 15px;

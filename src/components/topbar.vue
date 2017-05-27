@@ -1,13 +1,13 @@
 <template>
     <nav class="topbar">
         <div class="container">
-            <div class="topbar--icon">
+            <div class="icon">
                 <a href="https://github.com/clipwww" title="clipwww github" target="_blank">
                     <i class="ion-social-github"></i>
                 </a>
             </div>
-            <div class="topbar--search">
-                <div class="topbar--search--wrap">
+            <div class="search">
+                <div class="search-wrap">
                     <input type="text" v-model="searchWord" @keyup.enter="GoSearch" placeholder="總之是Google站內搜尋"/>
                     <button @click="GoSearch"><i class="ion-android-search"></i></button>
                 </div>
@@ -15,15 +15,15 @@
                     <i class="ion-android-search"></i>
                 </router-link>
             </div>
-            <div class="topbar--right">
-                <div class="topbar--right--my">
+            <div class="right">
+                <div class="my">
                     <label for="js-messages">
                         <figure>
                              <img :src="fbInfo.picture.data.url" :alt="fbInfo.name">
                              <figcaption>{{ fbInfo.name }}</figcaption>
                         </figure>
                     </label>
-                    <input class="topbar--right--my--messages" type="checkbox" id="js-messages">
+                    <input class="my-messages" type="checkbox" id="js-messages">
                     <div class="checkbox-popup-wrap">
                         <label for="js-messages"> </label>
                         <div class="container">
@@ -42,13 +42,13 @@
                         </div> 
                     </div>
                 </div>
-                <div class="topbar--right--link">
-                    <router-link to="/" class="topbar--right--home">
+                <div class="link">
+                    <router-link to="/" class="home">
                         首頁
                     </router-link>
                 </div>
             </div>
-            <div class="topbar--humbuger">
+            <div class="humbuger">
                 <a href="#">
                     <i class="ion-navicon"></i>
                 </a>
@@ -95,13 +95,13 @@
         overflow: hidden;
         z-index: 1032;
 
-        &--icon, &--search, &--right, &--humbuger{
+        .icon, .search, .right, .humbuger{
             display: inline-block;
             height: $topbarHeight;
             color: white;
         }
 
-        &--icon {
+        .icon {
             position: relative;
 
             a {
@@ -127,10 +127,10 @@
             }
         } //end icon
 
-        &--search{
+        .search{
             position: relative;
             width: 300px;
-            &--wrap{
+            .search-wrap{
                 position: absolute;
                 top: 50%;
                 left: 5px;
@@ -190,9 +190,9 @@
 
         }//end search
         
-        &--right{
+        .right{
             float: right;
-            &--my{
+            .my{
                 position: relative;
                 display: inline-block;
 
@@ -225,7 +225,7 @@
                     }
                 }
 
-                &--messages{
+                .my-messages{
                     display: none;
                     + .checkbox-popup-wrap{
                         display: none;
@@ -279,7 +279,7 @@
                 }
             }//end my
 
-            &--link{
+            .link{
                 display: inline-block;
                 a{
                     display: inline-block;
@@ -308,7 +308,7 @@
             }
         }//end right
 
-        &--humbuger{
+        .humbuger{
             display: none;
         }
     }
@@ -318,13 +318,13 @@
             > .container{
                 padding: 0;
             }
-            &--search--wrap, &--right--my figure figcaption, &--right--link{
+            .search-wrap, .right .my figure figcaption, .link{
                 display: none;
             }
-            &--humbuger, &--search a{
+            .humbuger, .search a{
                 display: block;
             }
-            &--right--my{
+            .my{
                 position: relative;
                 height: 100%;
                 width: 100%;
@@ -337,7 +337,7 @@
                     transform: translate(-50%, -50%);
                 }
 
-                &--messages{
+                .my-messages{
                     + .checkbox-popup-wrap{
 
                         .content{
@@ -349,12 +349,12 @@
                 }
             }
 
-            &--icon, &--search, &--right, &--humbuger{
+            .icon, .search, .right, .humbuger{
                 float: left;
                 width: 25%;
             }
 
-            &--icon, &--search, &--humbuger{
+            .icon, .search, .humbuger{
                 position: relative;
                 a{
                     position: absolute;

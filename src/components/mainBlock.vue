@@ -1,15 +1,15 @@
 <template>
   	<div class="container mainBlock">
 		<figure class="main-visual">
-			<img class="main-visual--image" src="../assets/images/1492961499230.png" alt="main visual">
+			<img class="image" src="../assets/images/1492961499230.png" alt="main visual">
             <h2>{{ fbInfo.name }}<span>（David, Jian）</span></h2>
             <figcaption>Pixiv illust_id=62046607<br/>作者：Kare（Pixiv id=1045048）</figcaption>
 		</figure>
 		<div class="menu">
-            <div class="menu--myPic" >
+            <div class="myPic" >
                 <img :src="fbInfo.picture.data.url" :alt="fbInfo.name">
             </div>
-            <ul class="menu--link">
+            <ul class="link">
                 <li :class="{ active: IsNowRoute('Home')}">
                     <router-link to="/" >
                         <i class="ion-ios-home"></i>
@@ -78,7 +78,7 @@
 	   padding-bottom: 37%;
 	   position: relative;
 
-	   &--image{
+	   .image{
 		   position: absolute;
 		   top: 0;
 		   left: 0;
@@ -132,7 +132,7 @@
        border-top: 0;
        border-radius: 0 0 5px 5px;
 
-        &--myPic{
+        .myPic{
             position: absolute;
             left: 15px;
             bottom: 15px;
@@ -157,7 +157,7 @@
             }
         }
 
-        &--link{
+        .link{
             padding: 0;
             margin: 0;
             list-style: none;
@@ -238,7 +238,7 @@
            height:  200px;
             border-radius: 0;
 
-           &--myPic{
+           .myPic{
                width: 100px;
                padding-bottom: 98px;
                left: 50%;
@@ -246,7 +246,7 @@
                transform: translateX(-50%);
            }
 
-           &--link{
+           .link{
                padding: 0;
                width: 100%;
                padding-top: 135px;
