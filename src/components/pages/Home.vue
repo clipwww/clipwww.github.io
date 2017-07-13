@@ -24,7 +24,8 @@
 					</header>
 					<div class="body">
 						<ul class="skill-tags clearfix">
-							<li v-for="item in resumeData.skills" :style="{ fontSize: `${item.value}px`, backgroundColor: item.color }">
+							<li v-for="(item, index) in resumeData.skills" :key="index"
+							 :style="{ fontSize: `${item.value}px`, backgroundColor: item.color }">
 								{{ item.name }}
 							</li>
 						</ul>
@@ -42,7 +43,7 @@
 			</div>
 
 			<div class="col-md-8 timeline">
-				<div class="time-box" v-for="item in resumeData.timeline">
+				<div class="time-box" v-for="(item, index) in resumeData.timeline" :key="index">
 					<div class="head clearfix">
 						<img :src="fbInfo.picture.data.url" :alt="fbInfo.name">
 						<span class="name">{{ fbInfo.name }}</span>

@@ -95,6 +95,7 @@
     font-family: "Arial", "Heiti TC", "Microsoft JhengHei", sans-serif;
     font-weight: 400;
     font-size: 15px;
+    line-height: 1.7;
     background-color: #f5f5f5;
     background-image: url('./assets/images/subtle_grunge.png');
     padding-top: 50px;
