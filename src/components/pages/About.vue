@@ -53,17 +53,18 @@
 			}
 		}),
 		created(){
-             window.onscroll = (e) =>{
-                let mediaMax992 = window.matchMedia('screen and (max-width:992px)');
-                let $menu = document.querySelector("#js-menu");
-                let menuTop = document.querySelector(".about-menu").getBoundingClientRect().top;
-                if( menuTop - 50 <= 0 && !mediaMax992.matches){
-                    $menu.style.top = (document.body.scrollTop - (menuTop + window.pageYOffset - 50)) + "px";
-                }else{
-                    $menu.style.top = "0px";
-                }
-                
-             }
+             window.addEventListener("scroll", (e) =>{
+                 if(this.$route.name === "About"){
+                    let mediaMax992 = window.matchMedia('screen and (max-width:992px)');
+                    let $menu = document.querySelector("#js-menu");
+                    let menuTop = document.querySelector(".about-menu").getBoundingClientRect().top;
+                    if( menuTop - 50 <= 0 && !mediaMax992.matches){
+                        $menu.style.top = (document.body.scrollTop - (menuTop + window.pageYOffset - 50)) + "px";
+                    }else{
+                        $menu.style.top = "0px";
+                    }
+                 }             
+             }, false);
 		}
     }
 </script>
