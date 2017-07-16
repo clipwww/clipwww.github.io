@@ -25,7 +25,7 @@
                 <li :class="{ active: IsNowRoute('Work')}">
                     <router-link to="/Work">
                         <i class="ion-folder"></i>
-                        <span>作品</span>
+                        <span>專案</span>
                     </router-link>
                 </li>
                 <li>

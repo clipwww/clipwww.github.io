@@ -146,6 +146,7 @@
                     border: none;
                     width: 80%;
                     color: black;
+                    line-height: 1;
 
                     &:focus{
                         outline: none;

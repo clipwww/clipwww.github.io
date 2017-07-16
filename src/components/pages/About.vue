@@ -31,7 +31,7 @@
         name: "About",
         data(){
             return{
-                nowShow: "experience"
+                nowShow: "about"
             }
         },
 		computed: Object.assign( mapGetters({
@@ -53,16 +53,17 @@
 			}
 		}),
 		created(){
-			window.onscroll = (e) =>{
-                var $menu = document.querySelector("#js-menu");
-                var menuTop = document.querySelector(".about-menu").getBoundingClientRect().top;
-                if( menuTop - 50 <= 0){
+             window.onscroll = (e) =>{
+                let mediaMax992 = window.matchMedia('screen and (max-width:992px)');
+                let $menu = document.querySelector("#js-menu");
+                let menuTop = document.querySelector(".about-menu").getBoundingClientRect().top;
+                if( menuTop - 50 <= 0 && !mediaMax992.matches){
                     $menu.style.top = (document.body.scrollTop - (menuTop + window.pageYOffset - 50)) + "px";
                 }else{
                     $menu.style.top = "0px";
                 }
                 
-            };
+             }
 		}
     }
 </script>
@@ -142,6 +143,28 @@
                 width: calc( 100% - 180px );
                 padding: 20px;
                 border-left: 1px solid #ddd;
+            }
+        }
+    }
+
+    @media(max-width: 992px){
+        .about{
+            .about-body{
+                display: block;
+                .about-menu{
+                    display: block;
+                    width: 100%;
+                    > ul{
+                        position: relative;     
+                        top: initial;
+                        left: initial;
+                    }
+                } 
+                .about-content{
+                    display: block;
+                    width: 100%;
+                    padding: 10px;
+                }  
             }
         }
     }

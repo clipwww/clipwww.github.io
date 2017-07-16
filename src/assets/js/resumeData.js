@@ -92,8 +92,8 @@ const timeline = [
 
 const about = {
     about: `
-　　從模仿、研究他人的網站原始碼到寫出自己的一頁式網頁，從空白到完成一個可看到畫面的網頁，那種成就感讓自己對於前端的領域（大坑）開始產生極大興趣，熱衷於研究HTML、CSS、JavaScript使用技巧與新技術，對於不懂不熟悉的東西會自己搜尋解答、閱讀官方文件，向他人詢問時也會將問題整理清楚。\n
-　　進入職場後與後端同事合作串接資料並且學習討教.NET MVC C#的後端技術；在與前端同事一起研究新的JS Framework時，被vue的方便以及強大所吸引，有參加過【vuedinner】（由<a href="https://www.facebook.com/groups/vuejs.tw/?fref=ts" target="_blank">vue.js台灣</a>主辦的線下vue分享會）、【<a href="https://www.facebook.com/groups/616281401885574/?fref=ts" target="_blank">線上讀書會</a>】以及【<a href="https://www.facebook.com/bosscodingplease/?fref=ts">老闆，來點寇汀吧。</a>】線上直播Coding，學習吸收vue相關的技術以及一些的開發技巧，也開始有將vue嘗試使用於專案中。\n
+　　從模仿、研究他人的網站原始碼到寫出自己的一頁式網頁，從空白到完成一個可看到畫面的網頁，那種成就感讓自己對於前端這個大坑產生極大興趣，熱衷於研究HTML、CSS、JavaScript使用技巧與新技術，對於不懂不熟悉的東西會自己搜尋解答、閱讀官方文件，向他人詢問時也會將問題整理清楚。\n
+　　進入職場後與後端同事合作串接資料並且學習討教.NET MVC C#的後端技術；在與前端同事一起研究新的JS Framework時，受到vue的方便以及強大所吸引，有參加過【vuedinner】（由<a href="https://www.facebook.com/groups/vuejs.tw/?fref=ts" target="_blank">vue.js台灣</a>主辦的線下vue分享會），也會抽空觀看【<a href="https://www.facebook.com/groups/616281401885574/?fref=ts" target="_blank">線上讀書會</a>】的分享以及【<a href="https://www.facebook.com/bosscodingplease/?fref=ts">老闆，來點寇汀吧。</a>】線上直播Coding，學習吸收vue相關的技術以及一些的開發技巧，並已經有將vue嘗試使用於專案中的經驗。\n
 　　希望能夠加入以Vue開發專案的團隊，增強自己使用vue開發專案的能力、熟練目前眾多新穎的前端技術與Node.js相關的工具（Webpack、Gulp、Express、Nuxt.js等）。
     `,
     skill: `
@@ -109,17 +109,17 @@ HTML、CSS
 JavaScrip
 ----------------------
 <hr/>
-- 理解JS的基礎特性跟其特殊的地雷
+- 理解JS的基礎特性與地雷
 - 熟悉JS函式庫 jQuery 的使用
-- 能自行研究套件的文件，使用套件幫助網頁快速開發
+- 能夠自行閱讀文件、查詢資料研究插件，幫助專案開發
 - 略懂一點ES6語法
 \n
 Vue.js
 ---------------------
 <hr/>
 - 熟悉vue的基礎使用
-- 能夠撰寫vue組件，重覆使用
-- 使用過vue-router、vuex、vue-cli、vee-vaildate
+- 能夠已組件化的開發方式使用vue
+- 使用過vue-router、vuex、vee-vaildate、vue-cli
 - 最近正在研究Nuxt.js
 \n
 Git
@@ -127,7 +127,6 @@ Git
 <hr/>
 - 理解Git的基本概念，可以使用命令視窗的方式操作Git
 - 有與同事使用Git控制專案版本的經驗
-- 有使用分支進行開發的經驗
 \n
 .NET MVC C#、MS SQL
 ----------------------
@@ -139,8 +138,8 @@ Git
     - 頁面導向
     - 表單資料處理
     - API
-- 會使用LINQ語法查詢、變更資料庫資料
-- 會使用SQL Server Management查詢資料庫資料
+- 能夠使用LINQ語法查詢、新增、修改與刪除資料庫資料
+- 能夠簡單操作SQL Server Management來查詢資料庫資料、建立資料表及欄位、匯出指令碼
     `,
     experience: `
 工作經歷
@@ -150,14 +149,17 @@ Git
 網頁前端工程師（Web Front-End Engineer）\n
 2016 / 03 － 2017 / 07 \n
 - 負責開發官網、活動網站、APP內嵌網頁或內部系統網站
-    - 切版、RWD、誇瀏覽器問題處理
-    - 表單驗證、前端防呆處理
-    - 與後端串接資料
-    - 與APP串接網頁
 - 舊專案維護
-- 
--
-    
+- 詳細見<a href="/#/Work">專案</a>
+\n
+<br/>
+學歷
+============
+<hr/>
+<h3>東海大學資管所碩士</h3>
+2013 / 09 － 2015 / 09 \n
+<h3>東海大學資工系學士</h3>
+2009 / 09 － 2013 / 06 \n
     `
 };
 
