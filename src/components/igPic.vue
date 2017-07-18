@@ -1,6 +1,6 @@
 <template>
     <ul class="ig-pic clearfix" :style="isActive(isOpen)">
-        <li v-for="(item,index) in igPics">
+        <li v-for="(item,index) in igPics" :key="index">
             <img :src="item.images.thumbnail.url" :alt="item.caption.text" />
         </li>
     </ul>

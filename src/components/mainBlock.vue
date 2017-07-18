@@ -58,7 +58,7 @@
         }),
         methods:{
 			IsNowRoute(val){
-				return this.$route.name === val;
+				return this.$route.name.indexOf(val) >= 0;
 			}
         },
         created(){

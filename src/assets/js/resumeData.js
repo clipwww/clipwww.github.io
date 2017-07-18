@@ -92,9 +92,10 @@ const timeline = [
 
 const about = {
     about: `
-　　從模仿、研究他人的網站原始碼到寫出自己的一頁式網頁，從空白到完成一個可看到畫面的網頁，那種成就感讓自己對於前端這個大坑產生極大興趣，熱衷於研究HTML、CSS、JavaScript使用技巧與新技術，對於不懂不熟悉的東西會自己搜尋解答、閱讀官方文件，向他人詢問時也會將問題整理清楚。\n
-　　進入職場後與後端同事合作串接資料並且學習討教.NET MVC C#的後端技術；在與前端同事一起研究新的JS Framework時，受到vue的方便以及強大所吸引，有參加過【vuedinner】（由<a href="https://www.facebook.com/groups/vuejs.tw/?fref=ts" target="_blank">vue.js台灣</a>主辦的線下vue分享會），也會抽空觀看【<a href="https://www.facebook.com/groups/616281401885574/?fref=ts" target="_blank">線上讀書會</a>】的分享以及【<a href="https://www.facebook.com/bosscodingplease/?fref=ts">老闆，來點寇汀吧。</a>】線上直播Coding，學習吸收vue相關的技術以及一些的開發技巧，並已經有將vue嘗試使用於專案中的經驗。\n
-　　希望能夠加入以Vue開發專案的團隊，增強自己使用vue開發專案的能力、熟練目前眾多新穎的前端技術與Node.js相關的工具（Webpack、Gulp、Express、Nuxt.js等）。
+　　最初由模仿、研究他人的網站原始碼試著寫出自己的一頁式網頁，從空白到完成一個可看到畫面的網頁，那種成就感讓自己對於前端這個大坑產生極大興趣，透過網路資源（如Codecademy、w3schools、FreeCodeCamp）以及購買書籍開始接觸、自學前端基礎。熱衷於研究HTML、CSS、JavaScript使用技巧與新技術，對於不懂不熟悉的東西會自己搜尋解答、閱讀官方文件，向他人詢問時也會將問題整理清楚。\n
+　　受到vue的方便以及強大所吸引，有參加過【vuedinner】（由<a href="https://www.facebook.com/groups/vuejs.tw/?fref=ts" target="_blank">vue.js台灣</a>主辦的線下vue分享會），也會抽空觀看【<a href="https://www.facebook.com/groups/616281401885574/?fref=ts" target="_blank">線上讀書會</a>】的分享以及【<a href="https://www.facebook.com/bosscodingplease/?fref=ts">老闆，來點寇汀吧。</a>】線上直播Coding，學習吸收vue相關的技術以及一些的開發技巧，並已經有將vue嘗試使用於專案中的經驗。\n
+　　希望能夠加入以vue開發專案的團隊，增強自己使用vue開發專案的能力、熟練目前眾多新穎的前端技術與Node.js相關的工具（Webpack、Gulp、Express、Nuxt.js等）。\n
+　　我的個性雖較為內向但待人溫和易相處以及配合度高，重視團隊精神、合群且負責任，不隨意誇大自己的付出，在團體生活中能與他人和諧相處。平日興趣為看棒球（雖然已無高中時每天看中華職棒的動力，但仍有持續關注旅外選手的比賽）、漫畫、動畫與電影（很喜歡進電影院享受特效大片或是製作精美的動畫片）以及吃好吃的東西。\n
     `,
     skill: `
 HTML、CSS
@@ -109,7 +110,7 @@ HTML、CSS
 JavaScrip
 ----------------------
 <hr/>
-- 理解JS的基礎特性與地雷
+- 理解JS的基礎特性
 - 熟悉JS函式庫 jQuery 的使用
 - 能夠自行閱讀文件、查詢資料研究插件，幫助專案開發
 - 略懂一點ES6語法
@@ -163,6 +164,51 @@ Git
     `
 };
 
+const works = [{
+        id: 1,
+        title: "勝悅髮型 | 群悅Spa",
+        company: "蝦米智慧媒體",
+        tags: ['官網', '.NET MVC']
+    },
+    {
+        id: 2,
+        title: "寶島眼鏡 Eye-Catch & EyeFamily",
+        company: "蝦米智慧媒體",
+        tags: ['官網', '.NET MVC', 'vue.js 1.0']
+    },
+    {
+        id: 3,
+        title: "Kia Life+ App",
+        company: "蝦米智慧媒體",
+        tags: ['後台網站', 'APP內嵌網頁', '.NET MVC']
+    },
+    {
+        id: 4,
+        title: "麗寶 Outlet Mall",
+        company: "蝦米智慧媒體",
+        tags: ['官網', '.NET MVC']
+    },
+    {
+        id: 5,
+        title: "南山人壽 | 天外祈ㄐㄧ",
+        company: "蝦米智慧媒體",
+        tags: ['活動網頁', 'vue.js']
+    },
+    {
+        id: 6,
+        title: "環球購物中心 Globall Mall",
+        company: "蝦米智慧媒體",
+        tags: ['官網', '.NET MVC', 'vue.js']
+    },
+    {
+        id: 7,
+        title: "安麗電子化表單",
+        company: "蝦米智慧媒體",
+        tags: ['內部網站', 'vue.js']
+    }
+
+];
+
 //<p style="font-size:12px">p.s. 雖然是以vue為主，但個人也不排斥學習React.js（對於React僅有照著教學寫ToDo List的經驗）</p>
 // - 使用變數統一管理顏色跟一些參數，減少要變更顏色或高寬時需要大量更改的麻煩
 // - 使用mixin建立方便的工具，如建立可產生前綴的animation、transform等的工具
@@ -170,5 +216,6 @@ Git
 export default {
     skills,
     timeline,
-    about
+    about,
+    works
 }
