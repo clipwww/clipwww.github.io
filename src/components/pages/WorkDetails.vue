@@ -3,11 +3,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="info-box">
-                    <header>
-                        <i class="ion-folder"></i><span>建置中</span>
-                    </header>
-                    <br/>
                     <div class="btn btn-primary" @click="Back">返回</div>
+                    <div class="markdown-wrap" v-html="Marked(content)"></div>
                 </div>
             </div>
         </div>
@@ -21,7 +18,7 @@
         name: "WorkDetails",
         data(){
             return{
-               
+               content: ""
             }
         },
 		computed: Object.assign( mapGetters({
@@ -38,7 +35,15 @@
             }
 		}),
 		created(){
-
+            this.axios.get("/static/works/" + this.$route.params.id + ".md")
+            .then((res) => {
+                console.log(res);
+               this.content = res.data;
+            })
+            .catch(e => {
+                console.log(e);
+            })
+          
 
 		}
     }
