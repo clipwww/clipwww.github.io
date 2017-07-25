@@ -196,13 +196,19 @@ const works = [{
     },
     {
         id: 6,
+        title: "寶島眼鏡門市平板內嵌網頁",
+        company: "蝦米智慧媒體",
+        tags: ['APP內嵌網頁', 'vue.js']
+    },
+    {
+        id: 7,
         title: "環球購物中心 Globall Mall",
         company: "蝦米智慧媒體",
         tags: ['官網', '.NET MVC', 'vue.js']
     },
     {
-        id: 7,
-        title: "安麗電子化表單",
+        id: 8,
+        title: "某企業內部電子化表單",
         company: "蝦米智慧媒體",
         tags: ['內部網站', 'vue.js']
     }

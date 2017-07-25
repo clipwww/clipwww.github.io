@@ -48,11 +48,11 @@
                     </router-link>
                 </div>
             </div>
-            <div class="humbuger">
+            <!-- <div class="humbuger">
                 <a href="#">
                     <i class="ion-navicon"></i>
                 </a>
-            </div>
+            </div> -->
         </div>
     </nav>
 </template>
@@ -266,7 +266,7 @@
                                 content: "";
                                 position: absolute;
                                 top: -18px;
-                                right: 120px;
+                                right: 10%;
                                 border: 10px solid transparent;
                                 border-color: transparent  transparent white transparent;
                             }
@@ -352,7 +352,7 @@
 
             .icon, .search, .right, .humbuger{
                 float: left;
-                width: 25%;
+                width: 33.333%;
             }
 
             .icon, .search, .humbuger{

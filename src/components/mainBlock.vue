@@ -29,10 +29,22 @@
                     </router-link>
                 </li>
                 <li>
-                    <router-link to="/">
+                    <a href="javascript:void(0)">
                         <i class="ion-more"></i>
                         <span>更多<i class="ion-arrow-down-b"></i></span>
-                    </router-link>
+                    </a>
+                    <ul class="more-menu">
+                        <li>
+                             <router-link to="/">
+                                個人小作品
+                             </router-link>
+                        </li>
+                        <li>
+                             <router-link to="/">
+                                預留空間(?)
+                             </router-link>
+                        </li>
+                    </ul>
                 </li>
             </ul>
 		</div>
@@ -209,6 +221,40 @@
                         white-space: nowrap;
                         i{
                             margin-left: 5px;
+                        }
+                    }
+                }
+
+                &:hover{
+                    .more-menu{
+                        display: block;
+                    }
+                }
+
+                .more-menu{
+                    padding: 0;
+                    margin: 0;
+                    list-style: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 100%;
+                    z-index: 1;
+                    background-color: white;
+                    text-align: center;
+                    border: 1px solid #ddd;
+                    padding: 5px 0; 
+                    display: none;
+
+                    > li{
+                        padding: 5px 10px;
+
+                        > a{
+                            text-decoration: none;
+                        }
+
+                        &:hover{
+                            background-color: rgba(0,0,0,.1);
                         }
                     }
                 }

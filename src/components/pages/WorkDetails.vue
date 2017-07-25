@@ -2,7 +2,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                test
+                <div class="info-box">
+                    <header>
+                        <i class="ion-folder"></i><span>建置中</span>
+                    </header>
+                    <br/>
+                    <div class="btn btn-primary" @click="Back">返回</div>
+                </div>
             </div>
         </div>
     </div>
@@ -27,6 +33,9 @@
 			Marked(val){
 				return marked(val, {  });
             },
+            Back(){
+                history.back();
+            }
 		}),
 		created(){
 
