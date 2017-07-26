@@ -3,8 +3,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="info-box">
-                    <div class="btn btn-primary" @click="Back">返回</div>
                     <div class="markdown-wrap" v-html="Marked(content)"></div>
+                    <hr/>
+                    <div class="btn btn-primary" @click="Back">返回列表</div>
                 </div>
             </div>
         </div>
