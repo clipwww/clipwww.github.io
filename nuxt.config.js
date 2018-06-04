@@ -21,6 +21,11 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    postcss: [
+      require('autoprefixer')({
+        browsers: ['last 5 version', 'iOS >=8', 'Safari >=8'],
+      }),
+    ],
     /*
     ** Run ESLint on save
     */
