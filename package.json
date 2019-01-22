@@ -1,28 +1,21 @@
 {
   "name": "clipwww.github.io",
   "version": "1.0.0",
-  "description": "Nuxt.js project",
-  "author": "David, Jian <clipwww@gmail.com>",
+  "description": "personal website",
+  "author": "David, Jian",
   "private": true,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "generate": "nuxt generate"
   },
   "dependencies": {
-    "nuxt": "^1.4.0",
-    "pug": "^2.0.3"
+    "cross-env": "^5.2.0",
+    "nuxt": "^2.3.4",
+    "@nuxtjs/pwa": "^2.6.0"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.1",
-    "eslint": "^4.15.0",
-    "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^1.7.1",
-    "eslint-plugin-vue": "^4.0.0",
-    "node-sass": "^4.9.0",
-    "sass-loader": "^7.0.2"
+    "nodemon": "^1.18.9"
   }
 }
