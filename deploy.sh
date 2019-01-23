@@ -13,11 +13,12 @@ cd dist
 # echo 'www.example.com' > CNAME
 
 git init
-git add -A
-git commit -m 'deploy'
 
 git config user.name "clipwww"
 git config user.email "clipwww@gmail.com"
+
+git add -A
+git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io
 git remote add origin git@github.com:clipwww/clipwww.github.io.git
