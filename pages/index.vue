@@ -24,17 +24,19 @@
   </section>
 </template>
 
-<script>
-import Logo from '~/components/Logo.vue'
+<script lang="ts">
+import { Component, Vue } from 'nuxt-property-decorator';
+import Logo from '~/components/Logo.vue';
 
-export default {
+@Component({
   components: {
-    Logo
-  }
-}
+    Logo,
+  },
+})
+export default class extends Vue {}
 </script>
 
-<style>
+<style lang="scss" scoped>
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -45,8 +47,8 @@ export default {
 }
 
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
