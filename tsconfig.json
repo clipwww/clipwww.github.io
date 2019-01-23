@@ -12,11 +12,11 @@
     "sourceMap": true,
     "baseUrl": ".",
     "types": [
-      "@types/node"
+      "webpack-env"
     ],
     "paths": {
-      "~/*": [
-        "./*"
+      "@/*": [
+        "src/*"
       ]
     },
     "lib": [
@@ -27,9 +27,9 @@
     ]
   },
   "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.vue",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
   ],
