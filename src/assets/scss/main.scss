@@ -1,0 +1,30 @@
+@import './variables';
+@import './animation';
+@import './mixin';
+@import './transition';
+  
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Microsoft JhengHei", 'LiHei Pro', Arial, 新細明體, sans-serif;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  line-height: 1.8;
+}
+
+img {
+  width: 100%;
+  border: 0px;
+  vertical-align: middle;
+}
