@@ -1,6 +1,7 @@
 <template>
   <header>
-
+    <div class="bg"></div>
+    <h1>clipwww.github.io</h1>
   </header>
 </template>
 
@@ -14,11 +15,23 @@ export default class Header extends Vue {}
 <style lang="scss" scoped>
 header {
   position: relative;
-  height: 320px;
-  background-image: url('http://trimatrixlab.com/store/flatrica/images/backgrounds/background.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+
+  .bg {
+    height: 320px;
+    background-image: url('../assets/images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    opacity: 0.5;
+  }
+
+  h1 {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-shadow: 1px 1px #fff;
+  }
 }
 </style>

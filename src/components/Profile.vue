@@ -2,7 +2,6 @@
   <div class="profile-card">
     <div class="profile-card__content">
       <div class="profile-card__info">
-        clipwww.github.io
         <h1>施工中</h1>
       </div>
       <div class="profile-card__picture">
@@ -23,7 +22,7 @@ export default class Profile extends Vue {}
 .profile-card {
   position: relative;
   max-width: 950px;
-  margin: -50px auto 0;
+  margin: -100px auto 0;
   padding: 0 15px;
 
   &__content {
@@ -45,6 +44,7 @@ export default class Profile extends Vue {}
     position: relative;
     flex: 1;
     padding: 10px;
+    text-align: center;
 
     &::after {
       position: absolute;
