@@ -32,6 +32,7 @@ header {
     left: 50%;
     transform: translateX(-50%);
     text-shadow: 1px 1px #fff;
+    text-align: center;
   }
 }
 </style>

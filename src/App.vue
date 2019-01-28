@@ -26,12 +26,10 @@ export default class App extends Vue {}
 
 
 <style lang="scss">
-#app {
-  text-align: center;
-}
-
 #nav {
   padding: 30px;
+  text-align: center;
+
   a {
     font-weight: bold;
     color: #2c3e50;
