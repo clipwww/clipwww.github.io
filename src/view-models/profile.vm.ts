@@ -11,6 +11,7 @@ export interface IProfile {
   linkedin: string;
   gitHub: string;
   experienceList: IExperience[];
+  skills: ISkill[];
 }
 
 export interface IExperience {
@@ -20,4 +21,9 @@ export interface IExperience {
   dateStart: string;
   dateEnd: string;
   description: string;
+}
+
+export interface ISkill {
+  name: string;
+  star: number;
 }

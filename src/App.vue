@@ -3,6 +3,7 @@
     <Header />
     <Profile />
     <router-view/>
+    <GoTop />
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 import Header from '@/components/Header.vue';
 import Profile from '@/components/Profile.vue';
+import GoTop from '@/components/GoTop.vue';
 
 @Component({
   metaInfo: {
@@ -20,6 +22,7 @@ import Profile from '@/components/Profile.vue';
   components: {
     Header,
     Profile,
+    GoTop,
   },
 })
 export default class App extends Vue {}

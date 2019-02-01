@@ -47,3 +47,9 @@ $breakpoints: ( 'md': 'screen and (max-width: #{$lgw})', 'mmd': 'screen and (max
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

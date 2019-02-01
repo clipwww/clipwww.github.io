@@ -9,6 +9,7 @@
         :key="index"
         data-aos="fade-right"
         data-aos-duration="500"
+        data-aos-offset="0"
         :data-aos-delay="100 * index">
         <i :class="exp.iconClass" class="experience__icon"></i>
         <div class="experience__content">
@@ -98,30 +99,6 @@ export default class Experience extends Vue {
     }
   }
 
-  &__icon {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: $black;
-    color: #fff;
-    border-radius: 50%;
-    box-shadow: $box_shadow;
-    z-index: 3;
-
-    @include respond-to(sm) {
-      left: initial;
-      right: 0px;
-      top: -10px;
-      z-index: 5;
-    }
-  }
-
   &__content {
     position: relative;
     width: 45%;
@@ -134,6 +111,7 @@ export default class Experience extends Vue {
 
     @include respond-to(sm) {
       width: 100%;
+      padding-right: 40px;
       border: none;
       border-left: 10px solid $vue_color;
     }
@@ -150,6 +128,30 @@ export default class Experience extends Vue {
     .date {
       margin-top: 10px;
       font-size: 0.8rem;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: $vue_color;
+    color: #fff;
+    border-radius: 50%;
+    box-shadow: $box_shadow;
+    z-index: 3;
+
+    @include respond-to(sm) {
+      left: initial;
+      right: -15px;
+      top: -10px;
+      z-index: 5;
     }
   }
 }

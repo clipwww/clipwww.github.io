@@ -1,6 +1,6 @@
 
 import { Module } from 'vuex';
-import { IProfile, IExperience } from '@/view-models/profile.vm';
+import { IProfile, IExperience, ISkill } from '@/view-models/profile.vm';
 
 const experienceList: IExperience[] = [
   {
@@ -37,6 +37,20 @@ const experienceList: IExperience[] = [
   },
 ];
 
+const skills: ISkill[] = [
+  { name: 'GIT', star: 4 },
+  { name: 'HTML5', star: 4 },
+  { name: 'CSS3/SCSS', star: 4 },
+  { name: 'JAVASCRIPT', star: 4 },
+  { name: 'TYPESCRIPT', star: 3 },
+  { name: 'JQUERY', star: 5 },
+  { name: 'VUE.JS', star: 4 },
+  { name: 'NUXT.JS', star: 4 },
+  { name: 'NODE.JS', star: 3.5 },
+  { name: 'APOLLO GRAPHQL', star: 2 },
+  { name: 'PIXI.JS', star: 2 },
+];
+
 const profile: Module<IProfile, any> = {
   namespaced: true,
   state: {
@@ -52,6 +66,7 @@ const profile: Module<IProfile, any> = {
     linkedin: 'www.linkedin.com/in/davidjian',
     gitHub: 'https://github.com/clipwww',
     experienceList,
+    skills,
   },
 };
 
