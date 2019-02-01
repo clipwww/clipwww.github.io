@@ -9,25 +9,27 @@ export interface IProfile {
   mobile: string;
   location: string;
   facebook: string;
+  instagram: string;
   googlePlus: string;
   linkedin: string;
   gitHub: string;
 }
 
-const menu: Module<IProfile, any> = {
+const profile: Module<IProfile, any> = {
   namespaced: true,
   state: {
-    name: 'Name',
-    nickName: 'Nick Name',
-    jobTitle: 'Front End Engineer',
+    name: '簡爾廷',
+    nickName: 'David, Jian',
+    jobTitle: 'Front-End Engineer',
     email: 'clipwww@gmail.com',
-    mobile: '0912345678',
-    location: 'Taipei, TW',
-    facebook: '',
-    googlePlus: '',
-    linkedin: '',
+    mobile: '0925151578',
+    location: 'Taipei, Taiwan',
+    facebook: 'https://www.facebook.com/ET.Jian',
+    instagram: 'https://www.instagram.com/jianerting/',
+    googlePlus: 'https://plus.google.com/117050026050768355670',
+    linkedin: 'www.linkedin.com/in/davidjian',
     gitHub: 'https://github.com/clipwww',
   },
 };
 
-export default menu;
+export default profile;

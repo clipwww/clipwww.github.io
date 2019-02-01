@@ -16,6 +16,11 @@ import Header from '@/components/Header.vue';
 import Profile from '@/components/Profile.vue';
 
 @Component({
+  metaInfo: {
+    title: 'David, Jian',
+    // all titles will be injected into this template
+    titleTemplate: '%s | clipwww.github.io',
+  },
   components: {
     Header,
     Profile,

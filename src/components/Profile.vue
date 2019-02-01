@@ -1,24 +1,38 @@
 <template>
   <div class="profile-card">
-    <div class="profile-card__content">
+    <div class="profile-card__content" data-aos="fade-up" data-aos-duration="1000">
       <div class="profile-card__info">
         <div class="profile-card__info--nickName">{{ profile.nickName }}</div>
         <div class="profile-card__info--name">{{ profile.name }}</div>
         <div class="profile-card__info--jobTitle">{{ profile.jobTitle }}</div>
 
         <ul class="profile-card__info--contact">
-          <li><i class="fab fa-github"></i><a :href="profile.gitHub" target="_blank">{{ profile.gitHub }}</a></li>
-          <li><i class="fas fa-envelope"></i><a :href="`mailto:${profile.email}`">{{ profile.email }}</a></li>
-          <li><i class="fas fa-mobile-alt"></i>{{ profile.mobile }}</li>
+          <li><i class="fas fa-map-marker-alt"></i>{{ profile.location }}</li>
+          <li><i class="fas fa-envelope"></i>{{ profile.email }}</li>
+          <!-- <li><i class="fas fa-mobile-alt"></i>{{ profile.mobile }}</li> -->
         </ul>
 
-        <ul class="profile-card__info--social">
-          <li class="facebook"><a :href="profile.facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+        <ul id="js-social" class="profile-card__info--social">
+          <li class="github">
+            <a :href="profile.gitHub" target="_blank" @click="$g_gaEventTracking('contact', 'click', 'github')"><i class="fab fa-github"></i></a></li>
+          <li class="email">
+            <a :href="`mailto:${profile.email}`" @click="$g_gaEventTracking('contact', 'click', 'email')"><i class="fas fa-envelope"></i></a>
+          </li>
+          <li class="facebook">
+            <a :href="profile.facebook" target="_blank" @click="$g_gaEventTracking('contact', 'click', 'facebook')"><i class="fab fa-facebook-f"></i></a>
+          </li>
+          <li class="instagram">
+            <a :href="profile.instagram" target="_blank" @click="$g_gaEventTracking('contact', 'click', 'instagram')"><i class="fab fa-instagram"></i></a>
+            </li>
+          <li class="linkedin">
+            <a :href="profile.googlePlus" target="_blank" @click="$g_gaEventTracking('contact', 'click', 'linkedin')"><i class="fab fa-linkedin-in"></i></a>
+          </li>
+          <!-- <li class="google"><a :href="profile.googlePlus" target="_blank"><i class="fab fa-google-plus-g"></i></a></li> -->
         </ul>
 
       </div>
       <div class="profile-card__picture">
-        <img src="https://placehold.it/500x500" alt="">
+        <img src="https://avatars3.githubusercontent.com/u/16633338?s=460&v=4" alt="">
       </div>
     </div>
   </div>
@@ -38,7 +52,7 @@ export default class Profile extends Vue {
 <style lang="scss" scoped>
 .profile-card {
   position: relative;
-  max-width: 950px;
+  max-width: 700px;
   margin: -100px auto 0;
   padding: 0 15px;
 
@@ -46,7 +60,7 @@ export default class Profile extends Vue {
     position: relative;
     display: flex;
     justify-content: space-between;
-    height: 400px;
+    height: 300px;
     background-color: $black;
     color: #fff;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -74,7 +88,7 @@ export default class Profile extends Vue {
       bottom: 0;
       content: '';
       border-style: solid;
-      border-width: 400px 0 0 100px;
+      border-width: 300px 0 0 100px;
       border-color: transparent transparent transparent $black;
       @include respond-to(sm) {
         content: none;
@@ -121,24 +135,50 @@ export default class Profile extends Vue {
 
     &--social {
       @include initList;
-      li {
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-        display: inline-flex;
-        align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      @include respond-to(sm) {
         justify-content: center;
+      }
 
-        &.facebook {
+      li {
+        border-radius: 50%;
+        margin-right: 10px;
+        a {
+          width: 35px;
+          height: 35px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           color: #fff;
+        }
+
+        &.email {
+          background-color: #ee7b1e;
+        }
+        &.github {
+          background-color: transparent;
+          font-size: 2.1rem;
+        }
+        &.facebook {
           background-color: #3b5998;
+        }
+        &.instagram {
+          background: $ig_bg;
+        }
+        &.google {
+          background-color: #d34836;
+        }
+        &.linkedin {
+          background-color: #0077b5;
         }
       }
     }
   }
 
   &__picture {
-    width: 400px;
+    width: 300px;
 
     @include respond-to(sm) {
       width: 170px;
@@ -146,6 +186,9 @@ export default class Profile extends Vue {
       left: 50%;
       transform: translateX(-50%);
       top: -100px;
+      img {
+        border-radius: 50%;
+      }
     }
   }
 }
