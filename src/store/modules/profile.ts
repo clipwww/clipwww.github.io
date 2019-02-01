@@ -1,19 +1,41 @@
 
 import { Module } from 'vuex';
+import { IProfile, IExperience } from '@/view-models/profile.vm';
 
-export interface IProfile {
-  name: string;
-  nickName: string;
-  jobTitle: string;
-  email: string;
-  mobile: string;
-  location: string;
-  facebook: string;
-  instagram: string;
-  googlePlus: string;
-  linkedin: string;
-  gitHub: string;
-}
+const experienceList: IExperience[] = [
+  {
+    iconClass: 'fas fa-building',
+    companyName: '香港商阿爾伊股份有限公司台灣分公司',
+    jobTitle: 'Front-End Engineer',
+    dateStart: '2017-08',
+    dateEnd: '',
+    description: '',
+  },
+  {
+    iconClass: 'fas fa-building',
+    companyName: '蝦米智慧媒體股份有限公司',
+    jobTitle: 'Web前端工程師',
+    dateStart: '2016-03',
+    dateEnd: '2017-07',
+    description: '',
+  },
+  {
+    iconClass: 'fas fa-graduation-cap',
+    companyName: '東海大學 資訊管理學系',
+    jobTitle: '碩士',
+    dateStart: '2013-09',
+    dateEnd: '2015-09',
+    description: '',
+  },
+  {
+    iconClass: 'fas fa-graduation-cap',
+    companyName: '東海大學 資訊工程學系',
+    jobTitle: '學士',
+    dateStart: '2009-09',
+    dateEnd: '2013-06',
+    description: '',
+  },
+];
 
 const profile: Module<IProfile, any> = {
   namespaced: true,
@@ -29,6 +51,7 @@ const profile: Module<IProfile, any> = {
     googlePlus: 'https://plus.google.com/117050026050768355670',
     linkedin: 'www.linkedin.com/in/davidjian',
     gitHub: 'https://github.com/clipwww',
+    experienceList,
   },
 };
 

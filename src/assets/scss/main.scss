@@ -21,6 +21,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.8;
+  background: url('../images/bg.png') repeat;
 }
 
 img {
@@ -32,4 +33,35 @@ img {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.container {
+  max-width: 1000px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.block {
+  margin: 30px 0;
+
+  &__title {
+    position: relative;
+    margin: 30px 0;
+    text-align: center;
+
+    h2 {
+      display: inline-block;
+      margin: 0;
+      font-weight: bold;
+      font-size: 1.6rem;
+      padding: 2px 35px;
+      background-color: $black;
+      color: #fff;
+      border-radius: 50px;
+    }
+
+    i {
+      margin-right: 10px;
+    }
+  }
 }

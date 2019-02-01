@@ -23,7 +23,8 @@ header {
     background-size: cover;
     background-position: bottom;
     background-attachment: fixed;
-    opacity: 0.5;
+    // opacity: 0.5;
+    filter: blur(2px);
   }
 
   h1 {

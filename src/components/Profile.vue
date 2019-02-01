@@ -1,6 +1,6 @@
 <template>
   <div class="profile-card">
-    <div class="profile-card__content" data-aos="fade-up" data-aos-duration="1000">
+    <div class="profile-card__content" data-aos="zoom-in" data-aos-duration="1000">
       <div class="profile-card__info">
         <div class="profile-card__info--nickName">{{ profile.nickName }}</div>
         <div class="profile-card__info--name">{{ profile.name }}</div>
@@ -35,13 +35,16 @@
         <img src="https://avatars3.githubusercontent.com/u/16633338?s=460&v=4" alt="">
       </div>
     </div>
+    <div class="profile-card__about" data-aos="zoom-in" data-aos-duration="1000">
+      <i class="fas fa-tractor"></i> 施工中
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { Getter } from 'vuex-class';
-import { IProfile } from '@/store/modules/profile';
+import { IProfile } from '@/view-models/profile.vm';
 
 @Component
 export default class Profile extends Vue {
@@ -53,8 +56,11 @@ export default class Profile extends Vue {
 .profile-card {
   position: relative;
   max-width: 700px;
-  margin: -100px auto 0;
+  margin: -200px auto 0;
   padding: 0 15px;
+  @include respond-to(sm) {
+    margin-top: -100px;
+  }
 
   &__content {
     position: relative;
@@ -63,12 +69,21 @@ export default class Profile extends Vue {
     height: 300px;
     background-color: $black;
     color: #fff;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: $box_shadow;
 
     @include respond-to(sm) {
       padding-top: 70px;
       height: auto;
     }
+  }
+
+  &__about {
+    margin-top: 15px;
+    background-color: $black;
+    color: #fff;
+    box-shadow: $box_shadow;
+    padding: 2rem;
+    border-bottom: 4px solid $vue_color;
   }
 
   &__info {
