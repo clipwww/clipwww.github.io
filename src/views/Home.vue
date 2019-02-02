@@ -8,7 +8,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import Experience from '@/components/Experience.vue';
-import Skill from '@/components/Skill.vue';
+import Skill from '@/components/Skill/Index.vue';
 
 @Component({
   components: {

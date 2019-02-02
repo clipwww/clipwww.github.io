@@ -1,12 +1,17 @@
 <template>
-  <div class="block" data-aos="fade-in">
-    <div class="block__title">
+  <div class="block">
+    <div class="block__title" data-aos="fade-up">
       <h2><i class="fas fa-star"></i>技能</h2>
     </div>
     <div class="skill">
       <div class="skill__item" v-for="(skill, index) in skills" :key="index">
-        <div class="skill__item--name">{{ skill.name }}</div>
-        <div class="skill__item--star">{{ skill.star }}</div>
+        <div class="skill__item--name">
+          <img :src="skill.imagePath" />
+          <span>{{ skill.name }}</span>
+        </div>
+        <div class="skill__item--star">
+          <SkillStar :star="skill.star"/>
+        </div>
       </div>
     </div>
   </div>
@@ -16,8 +21,13 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { Getter } from 'vuex-class';
 import { ISkill } from '@/view-models/profile.vm';
+import SkillStar from './Star.vue';
 
-@Component
+@Component({
+  components: {
+    SkillStar,
+  },
+})
 export default class Skill extends Vue {
   @Getter('skills') public skills!: ISkill[];
 }
@@ -36,7 +46,7 @@ export default class Skill extends Vue {
     width: 33.333%;
     display: flex;
     align-items: center;
-    margin: 15px 0;
+    margin: 10px 0;
 
     @include respond-to(sm) {
       width: 50%;
@@ -49,6 +59,18 @@ export default class Skill extends Vue {
     &--star {
       flex: 1;
       text-align: center;
+    }
+
+    &--name {
+      @include flexCenter;
+
+      img {
+        width: 17px;
+        margin-right: 5px;
+      }
+      span {
+        font-size: 0.9rem;
+      }
     }
   }
 }

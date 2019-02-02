@@ -35,7 +35,7 @@
         <img src="https://avatars3.githubusercontent.com/u/16633338?s=460&v=4" alt="">
       </div>
     </div>
-    <div class="profile-card__about" data-aos="zoom-in" data-aos-duration="1000">
+    <div class="profile-card__about" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="0">
       <i class="fas fa-tractor"></i> 施工中
     </div>
   </div>
