@@ -12,6 +12,8 @@ export interface IProfile {
   gitHub: string;
   experienceList: IExperience[];
   skills: ISkill[];
+  certifications: string[];
+  hobbys: IHobby[];
 }
 
 export interface IExperience {
@@ -26,4 +28,9 @@ export interface IExperience {
 export interface ISkill {
   name: string;
   star: number;
+}
+
+export interface IHobby {
+  name: string;
+  iconClass: string;
 }

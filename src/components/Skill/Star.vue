@@ -47,6 +47,10 @@ export default class Star extends Vue {
   justify-content: space-between;
   align-items: center;
   padding: 0 15px;
+  max-width: 160px;
+  @include respond-to(sm) {
+    padding-right: 0;
+  }
 
   &__content {
     position: relative;

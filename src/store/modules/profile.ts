@@ -1,6 +1,6 @@
 
 import { Module } from 'vuex';
-import { IProfile, IExperience, ISkill } from '@/view-models/profile.vm';
+import { IProfile, IExperience, ISkill, IHobby } from '@/view-models/profile.vm';
 
 const experienceList: IExperience[] = [
   {
@@ -38,17 +38,32 @@ const experienceList: IExperience[] = [
 ];
 
 const skills: ISkill[] = [
-  { name: 'GIT', star: 4 },
+  { name: 'Git', star: 4 },
   { name: 'HTML5', star: 4 },
   { name: 'CSS3/SCSS', star: 4 },
-  { name: 'JAVASCRIPT', star: 4 },
-  { name: 'TYPESCRIPT', star: 3 },
-  { name: 'JQUERY', star: 5 },
-  { name: 'VUE.JS', star: 4 },
-  { name: 'NUXT.JS', star: 4 },
-  { name: 'NODE.JS', star: 3.5 },
-  { name: 'APOLLO GRAPHQL', star: 2 },
-  { name: 'PIXI.JS', star: 2 },
+  { name: 'JavaScript', star: 4 },
+  { name: 'TypeScript', star: 3 },
+  { name: 'jQuery', star: 5 },
+  { name: 'Vue.js', star: 4 },
+  { name: 'Nuxt.js', star: 4 },
+  { name: 'Node.js', star: 3.5 },
+  { name: 'Apollo Graphql', star: 2 },
+  { name: 'PIXI.js', star: 2 },
+  { name: '.NET MVC', star: 3 },
+];
+
+const certifications: string[] = [
+  'JLPT N2',
+  'BI軟體應用師',
+  'SAP BI商業智能基礎管理師',
+];
+
+const hobbys: IHobby[] = [
+  { name: '動畫', iconClass: 'fab fa-youtube' },
+  { name: '漫畫', iconClass: 'fas fa-book' },
+  { name: '遊戲', iconClass: 'fas fa-gamepad' },
+  { name: '電影', iconClass: 'fas fa-film' },
+  { name: '棒球', iconClass: 'fas fa-baseball-ball' },
 ];
 
 const profile: Module<IProfile, any> = {
@@ -67,6 +82,8 @@ const profile: Module<IProfile, any> = {
     gitHub: 'https://github.com/clipwww',
     experienceList,
     skills,
+    certifications,
+    hobbys,
   },
 };
 

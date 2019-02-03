@@ -36,7 +36,15 @@
       </div>
     </div>
     <div class="profile-card__about" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="0">
-      <i class="fas fa-tractor"></i> 施工中
+      <div style="padding: 2rem;">
+        <i class="fas fa-tractor"></i> 施工中
+      </div>
+      <div class="profile-card__hobby">
+        <div  class="profile-card__hobby--item" v-for="(hobby, index) in hobbys" :key="index">
+          <i :class="hobby.iconClass"></i>
+          <div>{{ hobby.name }}</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -44,11 +52,12 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { Getter } from 'vuex-class';
-import { IProfile } from '@/view-models/profile.vm';
+import { IProfile, IHobby } from '@/view-models/profile.vm';
 
 @Component
 export default class Profile extends Vue {
   @Getter('profile') public profile!: IProfile;
+  @Getter('hobbys') public hobbys!: IHobby[];
 }
 </script>
 
@@ -82,8 +91,6 @@ export default class Profile extends Vue {
     background-color: $black;
     color: #fff;
     box-shadow: $box_shadow;
-    padding: 2rem;
-    border-bottom: 4px solid $vue_color;
   }
 
   &__info {
@@ -203,6 +210,25 @@ export default class Profile extends Vue {
       top: -100px;
       img {
         border-radius: 50%;
+      }
+    }
+  }
+
+  &__hobby {
+    display: flex;
+
+    &--item {
+      flex: 1;
+      padding: 10px;
+      font-size: 0.8rem;
+      text-align: center;
+
+      i {
+        color: $vue_color;
+        font-size: 2rem;
+        @include respond-to(sm) {
+          font-size: 1.5rem;
+        }
       }
     }
   }

@@ -4,13 +4,20 @@
       <h2><i class="fas fa-star"></i>技能</h2>
     </div>
     <div class="skill">
-      <div class="skill__item" v-for="(skill, index) in skills" :key="index">
-        <div class="skill__item--name">
-          <img :src="skill.imagePath" />
-          <span>{{ skill.name }}</span>
+      <div class="skill__list">
+        <div class="skill__item" v-for="(skill, index) in skills" :key="index">
+          <div class="skill__item--name">
+            <span>{{ skill.name }}</span>
+          </div>
+          <div class="skill__item--star">
+            <SkillStar :star="skill.star"/>
+          </div>
         </div>
-        <div class="skill__item--star">
-          <SkillStar :star="skill.star"/>
+      </div>
+      <hr />
+      <div>
+        <div class="skill__tag" v-for="(name, index) in certifications" :key="index">
+          {{ name }}
         </div>
       </div>
     </div>
@@ -30,6 +37,7 @@ import SkillStar from './Star.vue';
 })
 export default class Skill extends Vue {
   @Getter('skills') public skills!: ISkill[];
+  @Getter('certifications') public certifications!: string[];
 }
 </script>
 
@@ -37,10 +45,17 @@ export default class Skill extends Vue {
 .skill {
   background-color: $black;
   padding: 15px 30px;
-  color: #fff;
-  display: flex;
-  flex-wrap: wrap;
   border-bottom: 4px solid $vue_color;
+
+  &__list {
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @include respond-to(sm) {
+    padding: 10px;
+  }
 
   &__item {
     width: 33.333%;
@@ -59,6 +74,7 @@ export default class Skill extends Vue {
     &--star {
       flex: 1;
       text-align: center;
+      line-height: 1.3;
     }
 
     &--name {
@@ -72,6 +88,16 @@ export default class Skill extends Vue {
         font-size: 0.9rem;
       }
     }
+  }
+
+  &__tag {
+    display: inline-block;
+    border-radius: 50px;
+    background-color: $vue_color;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 2px 15px;
+    margin: 5px 15px 5px 0;
   }
 }
 </style>

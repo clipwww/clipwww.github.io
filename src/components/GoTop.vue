@@ -53,6 +53,11 @@ export default class GoTop extends Vue {
   width: 40px;
   height: 40px;
   cursor: pointer;
+  opacity: 0.7;
   @include flexCenter;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 </style>
