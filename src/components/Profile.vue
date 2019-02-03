@@ -1,6 +1,6 @@
 <template>
   <div class="profile-card">
-    <div class="profile-card__content" data-aos="zoom-in" data-aos-duration="1000">
+    <div class="profile-card__content">
       <div class="profile-card__info">
         <div class="profile-card__info--nickName">{{ profile.nickName }}</div>
         <div class="profile-card__info--name">{{ profile.name }}</div>
@@ -25,7 +25,7 @@
             <a :href="profile.instagram" target="_blank" @click="$g_gaEventTracking('contact', 'click', 'instagram')"><i class="fab fa-instagram"></i></a>
             </li>
           <li class="linkedin">
-            <a :href="profile.googlePlus" target="_blank" @click="$g_gaEventTracking('contact', 'click', 'linkedin')"><i class="fab fa-linkedin-in"></i></a>
+            <a :href="profile.linkedin" target="_blank" @click="$g_gaEventTracking('contact', 'click', 'linkedin')"><i class="fab fa-linkedin-in"></i></a>
           </li>
           <!-- <li class="google"><a :href="profile.googlePlus" target="_blank"><i class="fab fa-google-plus-g"></i></a></li> -->
         </ul>
@@ -35,7 +35,7 @@
         <img src="https://avatars3.githubusercontent.com/u/16633338?s=460&v=4" alt="">
       </div>
     </div>
-    <div class="profile-card__about" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="0">
+    <div class="profile-card__about" data-aos="zoom-in" data-aos-duration="1000">
       <div style="padding: 2rem;">
         <i class="fas fa-tractor"></i> 施工中
       </div>

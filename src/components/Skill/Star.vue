@@ -6,13 +6,11 @@
         <i class="fas fa-star-half skill-star--half" v-if="flipHalf(n)" 
           data-aos="zoom-in"
           data-aos-duration="1000"
-          :data-aos-delay="n * 150"
-          data-aos-offset="0"></i>
+          :data-aos-delay="n * 150"></i>
         <i class="fas fa-star skill-star--full" v-else-if="flip(n)" 
           data-aos="zoom-in"
           data-aos-duration="1000"
-          :data-aos-delay="n * 150"
-          data-aos-offset="0"></i>
+          :data-aos-delay="n * 150"></i>
       </div>
     </template>
   </div>

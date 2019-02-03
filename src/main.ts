@@ -21,6 +21,7 @@ new Vue({
   created() {
     AOS.init({
       once: true,
+      offset: 0,
     });
   },
 }).$mount('#app');

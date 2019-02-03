@@ -78,7 +78,7 @@ const profile: Module<IProfile, any> = {
     facebook: 'https://www.facebook.com/ET.Jian',
     instagram: 'https://www.instagram.com/jianerting/',
     googlePlus: 'https://plus.google.com/117050026050768355670',
-    linkedin: 'www.linkedin.com/in/davidjian',
+    linkedin: 'https://www.linkedin.com/in/davidjian',
     gitHub: 'https://github.com/clipwww',
     experienceList,
     skills,

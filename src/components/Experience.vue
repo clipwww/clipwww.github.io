@@ -9,7 +9,6 @@
         :key="index"
         data-aos="fade-right"
         data-aos-duration="500"
-        data-aos-offset="0"
         :data-aos-delay="100 * index">
         <i :class="exp.iconClass" class="experience__icon"></i>
         <div class="experience__content">
