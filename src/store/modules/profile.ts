@@ -59,6 +59,7 @@ const certifications: string[] = [
 ];
 
 const hobbys: IHobby[] = [
+  { name: '程式', iconClass: 'fas fa-code' },
   { name: '動畫', iconClass: 'fab fa-youtube' },
   { name: '漫畫', iconClass: 'fas fa-book' },
   { name: '遊戲', iconClass: 'fas fa-gamepad' },
