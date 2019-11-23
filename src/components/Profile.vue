@@ -37,7 +37,10 @@
     </div>
     <div class="profile-card__about" data-aos="zoom-in" data-aos-duration="1000">
       <div style="padding: 2rem;">
-        <i class="fas fa-tractor"></i> 施工中
+        <p>就學時曾經逃避程式，但在接觸到js、html、css後重新愛上程式，目前沉迷於前端無盡的大坑裡，對於自己活在這個前端技術大爆炸的年代感到美好。
+        喜歡追隨新的技術與知識，對於能夠用這些技術寫出讓生活更為輕鬆方便的工具感到喜悅，也很享受解決問題時的成就感。
+        雖然美感不足，但對於能夠創造出漂亮的網站感到興趣，看到喜歡的網站設計時都會花時間欣賞、吸收。</p>
+        <div>平常的嗜好:</div>
       </div>
       <div class="profile-card__hobby">
         <div  class="profile-card__hobby--item" v-for="(hobby, index) in hobbys" :key="index">

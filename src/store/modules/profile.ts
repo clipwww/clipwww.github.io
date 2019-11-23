@@ -38,24 +38,25 @@ const experienceList: IExperience[] = [
 ];
 
 const skills: ISkill[] = [
-  { name: 'Git', star: 4 },
-  { name: 'HTML5', star: 4 },
-  { name: 'CSS3/SCSS', star: 4 },
-  { name: 'JavaScript', star: 4 },
+  { name: 'Git', star: 4.5 },
+  { name: 'HTML5', star: 4.5 },
+  { name: 'CSS3/SCSS', star: 4.5 },
+  { name: 'JavaScript', star: 4.5 },
   { name: 'TypeScript', star: 3 },
   { name: 'jQuery', star: 5 },
-  { name: 'Vue.js', star: 4 },
+  { name: 'Vue.js', star: 4.5 },
   { name: 'Nuxt.js', star: 4 },
   { name: 'Node.js', star: 3.5 },
-  { name: 'Apollo Graphql', star: 2 },
+  { name: 'Apollo GraphQL', star: 2.5 },
   { name: 'PIXI.js', star: 2 },
-  { name: '.NET MVC', star: 3 },
+  { name: '.NET MVC', star: 2 },
 ];
 
 const certifications: string[] = [
   'JLPT N2',
-  'BI軟體應用師',
-  'SAP BI商業智能基礎管理師',
+  'BI軟體應用師證照',
+  'SAP BI商業智能基礎管理師證照',
+  'ERP規劃師認證',
 ];
 
 const hobbys: IHobby[] = [

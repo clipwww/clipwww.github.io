@@ -6,5 +6,5 @@ export interface WorkVM {
 export interface ProjectVM {
   title: string;
   description: string;
-  tag: string[];
+  tags: string[];
 }

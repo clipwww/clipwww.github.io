@@ -33,7 +33,7 @@ export default class Star extends Vue {
   }
 
   public flipHalf(n: number): boolean {
-    return n + 0.5 === this.star;
+    return n - 0.5 === this.star;
   }
 }
 </script>
