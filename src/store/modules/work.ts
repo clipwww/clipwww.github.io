@@ -22,7 +22,7 @@ const works: WorkVM[] = [
         description: `<ul>
           RE紅包的活動
           <li>與後端合作開發建置</li>
-          <li>接手設計師的gulp，從一開始單純的 html + minify js、css，為了讓活動開發更舒服，使用babel、browserify與typescript，也建置活動用的utilities供同事開發使用。</li>
+          <li>接手設計師的gulp，從一開始單純的 html + minify js、css，為了讓活動開發更舒服，使用babel、browserify與typescript，也建置活動用的utilities供團隊開發活動使用。</li>
         </ul>`,
         tags: ['gulp', 'babel', 'browserify', 'TypeScript', 'jQuery', 'Scss'],
       },
