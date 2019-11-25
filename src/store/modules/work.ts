@@ -60,7 +60,7 @@ const works: WorkVM[] = [
         title: 'RE紅包官方網站',
         description: `<ul>
           RE紅包對外宣傳的主要網站，除了介紹RE紅包、媒體消息外還有線上表單供店家聯絡我們以及使用者推薦店家。
-          <li>只要由網頁設計師切版</li>
+          <li>主要由網頁設計師切版</li>
           <li>與後端合作開發建置</li>
           <li>將原先Express+靜態Html的官方網站改版成 Nuxt (universal)</li>
           <li>使用vue-i18n完成多語系需求</li>
@@ -118,7 +118,7 @@ const works: WorkVM[] = [
         tags: ['.NET MVC', 'jQuery', 'Vue 1.x', 'Scss'],
       },
       {
-        title: '南山人壽活動網頁 <li>天外祈ㄐ',
+        title: '南山人壽活動網頁 - 天外祈ㄐ',
         description: `<ul>
           <li>與後端合作開發建置</li>
           <li>使用 Facebook OAuth2.0 進行登入參與活動
