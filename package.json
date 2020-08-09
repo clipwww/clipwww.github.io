@@ -1,35 +1,20 @@
 {
-  "name": "clipwww.github.io",
-  "version": "0.1.0",
-  "private": true,
+  "name": "clipwwww.github.io",
+  "version": "1.0.0",
+  "description": "",
   "scripts": {
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "dev": "vue-cli-service serve"
+    "dev": "npx parcel src/index.html",
+    "prebuild": "rm -rf dist",
+    "build": "npx parcel build src/index.html --no-source-maps --detailed-report"
   },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "aos": "^2.3.4",
-    "core-js": "^3.3.2",
-    "markdown-it": "^10.0.0",
-    "register-service-worker": "^1.5.2",
-    "vue": "^2.6.10",
-    "vue-analytics": "^5.16.2",
-    "vue-class-component": "^6.0.0",
-    "vue-meta": "^1.5.8",
-    "vue-property-decorator": "^7.0.0",
-    "vue-router": "^3.0.1",
-    "vuex": "^3.0.1",
-    "vuex-class": "^0.3.1"
+    "danmaku": "^2.0.1",
+    "parcel-bundler": "^1.12.4"
   },
   "devDependencies": {
-    "@types/aos": "^3.0.0",
-    "@vue/cli-plugin-babel": "^4.0.5",
-    "@vue/cli-plugin-pwa": "^4.0.5",
-    "@vue/cli-plugin-typescript": "^4.0.5",
-    "@vue/cli-service": "^4.0.5",
-    "node-sass": "^4.9.0",
-    "sass-loader": "^7.0.0",
-    "typescript": "^3.7.2",
-    "vue-template-compiler": "^2.6.10"
+    "sass": "^1.26.10",
+    "typescript": "^3.9.7"
   }
 }
