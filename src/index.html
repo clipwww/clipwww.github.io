@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <div class="alert">
+  <div id="js-alert" class="alert">
     <div class="alert__icon">
       <img src="./images/warning.png" alt="warning">
     </div>
@@ -25,9 +25,11 @@
         <li>■ 数分待ってから、ページを最新の情報に更新してください。</li>
         <li>■ ファイアウォールやプロキシでネットワークが保護されている場合、Web アクセスが許可されているか確認してください。</li>
       </ul>
-      <button class="alert__btn" onclick="window.location.reload()">再試行</button>
+      <button class="alert__btn" id="js-reload">再試行</button>
     </div>
   </div>
+
+  <div id="js-commandline" class="commandline"></div>
   <script src="./app.ts"></script>
 </body>
 
