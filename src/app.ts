@@ -8,7 +8,7 @@ console.log(`
 const SPEED = 150;
 const NAME = "ＹＵＫＩ. Ｎ＞";
 
-function sleep(time: number) {
+function sleep(time: number): Promise<void> {
   return new Promise((res) => {
     setTimeout(() => {
       res();
@@ -61,6 +61,11 @@ async function ready(msg = '', count = 0) {
 
     document.addEventListener('keydown', (e) => {
       // TODO: 做些什麼
+      gtag('event', 'keydown', {
+        event_category: 'Ready?',
+        event_label: e.key,
+        transport_type: '',
+      });
       window.location.reload();
       // switch (e.keyCode) {
       //   case 13:
@@ -127,5 +132,12 @@ async function start() {
   ready(msg);
 }
 
-document.getElementById('js-reload').addEventListener('click', start);
+document.getElementById('js-reload').addEventListener('click', () => {
+  gtag('event', 'click', {
+    event_category: '再試行',
+    event_label: '',
+    transport_type: '',
+  });
+  start();
+});
 // start();

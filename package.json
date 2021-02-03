@@ -13,6 +13,7 @@
     "parcel-bundler": "^1.12.4"
   },
   "devDependencies": {
+    "@types/gtag.js": "0.0.4",
     "sass": "^1.26.10",
     "typescript": "^3.9.7"
   }
