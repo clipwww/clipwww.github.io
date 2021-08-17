@@ -84,6 +84,19 @@ body {
 
   &__btn {
     margin-top: 20px;
+    cursor: pointer;
+  }
+
+  &__exit {
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+    z-index: 1;
+    display: none;
+
+    &.is-active {
+      display: inline-block;
+    }
   }
 }
 

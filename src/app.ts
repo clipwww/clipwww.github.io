@@ -66,7 +66,8 @@ async function ready(msg = '', count = 0) {
         event_label: e.key,
         transport_type: '',
       });
-      window.location.reload();
+      document.getElementById('js-exit').click();
+      // window.location.reload();
       // switch (e.keyCode) {
       //   case 13:
       //     $commandline.classList.remove('is-active');
@@ -139,5 +140,6 @@ document.getElementById('js-reload').addEventListener('click', () => {
     transport_type: '',
   });
   start();
+  document.getElementById('js-exit').classList.add('is-active')
 });
 // start();
