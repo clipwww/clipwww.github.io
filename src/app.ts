@@ -140,6 +140,6 @@ document.getElementById('js-reload').addEventListener('click', () => {
     transport_type: '',
   });
   start();
-  document.getElementById('js-exit').classList.add('is-active')
+  // document.getElementById('js-exit').classList.add('is-active')
 });
 // start();
