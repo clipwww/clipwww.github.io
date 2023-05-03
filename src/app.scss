@@ -110,6 +110,7 @@ body {
   color: #fff;
   padding: 5px 10px;
   display: none;
+  overflow: auto;
 
   @include rwd {
     top: 0;
