@@ -5,7 +5,7 @@ console.log(`
 ------------------------------
 `)
 
-const SPEED = 150;
+const SPEED = 100;
 const NAME = "ＹＵＫＩ. Ｎ＞";
 
 function sleep(time: number): Promise<void> {
@@ -16,7 +16,7 @@ function sleep(time: number): Promise<void> {
   })
 }
 
-const $commandline = document.getElementById('js-commandline');
+const $commandline = document.getElementById('js-commandline')!;
 function print(str: string) {
   // console.clear();
   // console.log(str);
@@ -35,7 +35,7 @@ async function yuki_n(messages: string[], msg = '') {
   for (let i = 0, length = messages.length; i < length; i++) {
     for (let j = 0, slength = messages[i].length; j < slength; j++) {
       msg += messages[i][j]
-      print(msg + (j !== slength - 1 ? '＿' : ''));
+      print(msg + (j !== slength - 1 ? '▌' : ''));
 
       if (j === slength - 1) {
         msg += `<br/><span style="opacity: 0">${NAME}</span>`;
@@ -66,7 +66,7 @@ async function ready(msg = '', count = 0) {
         event_label: e.key,
         transport_type: '',
       });
-      document.getElementById('js-exit').click();
+      document.getElementById('js-exit')!.click();
       // window.location.reload();
       // switch (e.keyCode) {
       //   case 13:
@@ -133,7 +133,7 @@ async function start() {
   ready(msg);
 }
 
-document.getElementById('js-reload').addEventListener('click', () => {
+document.getElementById('js-reload')!.addEventListener('click', () => {
   gtag('event', 'click', {
     event_category: '再試行',
     event_label: '',
