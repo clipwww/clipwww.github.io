@@ -5,7 +5,7 @@ console.log(`
 ------------------------------
 `)
 
-const SPEED = 1;
+const SPEED = 70;
 const NAME = "ＹＵＫＩ. Ｎ＞";
 
 function sleep(time: number): Promise<void> {
