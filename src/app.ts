@@ -59,6 +59,7 @@ async function ready(msg = '', count = 0) {
       await sleep(SPEED);
     }
 
+    document.getElementById('js-exit')!.classList.add('is-active')
     document.addEventListener('keydown', (e) => {
       gtag('event', 'keydown', {
         event_category: 'Ready?',
