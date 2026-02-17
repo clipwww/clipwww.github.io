@@ -22,10 +22,12 @@ body {
   border-radius: 10px;
   padding: 35px 100px 45px 30px;
   display: flex;
-  transition: transform .5s;
+  transform-origin: center;
+  will-change: transform, opacity, filter;
 
   &.is-escape {
-    transform: scale(0);
+    pointer-events: none;
+    animation: screen-off .65s cubic-bezier(.25, .8, .25, 1) forwards;
   }
 
   @include rwd {
@@ -42,6 +44,7 @@ body {
   &__icon {
     width: 45px;
     margin-right: 20px;
+
     @include rwd {
       width: 60px;
       margin-bottom: 15px;
@@ -97,6 +100,32 @@ body {
     &.is-active {
       display: inline-block;
     }
+  }
+}
+
+@keyframes screen-off {
+  0% {
+    transform: scale(1, 1);
+    opacity: 1;
+    filter: brightness(1);
+  }
+
+  45% {
+    transform: scale(1.03, .08);
+    opacity: 1;
+    filter: brightness(2.2);
+  }
+
+  75% {
+    transform: scale(.03, .03);
+    opacity: 1;
+    filter: brightness(3);
+  }
+
+  100% {
+    transform: scale(0, 0);
+    opacity: 0;
+    filter: brightness(0);
   }
 }
 

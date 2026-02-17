@@ -5,7 +5,7 @@ console.log(`
 ------------------------------
 `)
 
-const SPEED = 100;
+const SPEED = 1;
 const NAME = "ＹＵＫＩ. Ｎ＞";
 
 function sleep(time: number): Promise<void> {
@@ -60,25 +60,18 @@ async function ready(msg = '', count = 0) {
     }
 
     document.addEventListener('keydown', (e) => {
-      // TODO: 做些什麼
       gtag('event', 'keydown', {
         event_category: 'Ready?',
         event_label: e.key,
         transport_type: '',
       });
-      document.getElementById('js-exit')!.click();
+      // document.getElementById('js-exit')!.click();
       // window.location.reload();
-      // switch (e.keyCode) {
-      //   case 13:
-      //     $commandline.classList.remove('is-active');
-      //     document.getElementById('js-alert').classList.add('is-escape')
-      //     setTimeout(() => {
-      //       window.location.reload();
-      //     }, 500)
-      //     break;
-      //   default:
-      //     $commandline.classList.remove('is-active');
-      // }
+      $commandline.classList.remove('is-active');
+      document.getElementById('js-alert')!.classList.add('is-escape')
+      setTimeout(() => {
+        window.location.replace('/personal')
+      }, 700)
     })
   }
   print(msg + (count % 2 !== 0 ? '＿' : ''))
